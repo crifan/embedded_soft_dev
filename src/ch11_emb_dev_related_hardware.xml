@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch11_emb_dev_related_hardware">
+<title>嵌入式软件开发相关硬件知识</title>
+<abstract></abstract>
+
+<para>嵌入式软件开发期间，也会涉及到很多硬件相关的知识。</para>
+<para></para>
+<para></para>
+<para>比如ARM的LEON3：想要在LEON3基础上添加更多模块，则可参考：<link xl:href="http://people.xiph.org/~j/bzr/theora-fpga/doc/leon3_integration/">LEON3 Integration</link></para>
+<para></para>
+
+<sect1 xml:id="chip_packing"><title>芯片封装方式</title>
+    <para>搞嵌入式软件开发，往往会涉及很多芯片，其中芯片的外形和大小，和其封装方式有关。</para>
+    <para>芯片封装方式，有很多种，比如：</para>
+    <itemizedlist>
+        <listitem>SIP==系统式封装</listitem>
+        <listitem>MCP==多芯片封装</listitem>
+    </itemizedlist>
+    <para>TODO：抽空了解封装方面的知识：</para>
+    <para><link xl:href="http://www.spansion.com/CN/Products/diewafer/Pages/DieWafer-NOR-Flash.aspx" /></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>

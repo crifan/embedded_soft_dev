@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch06_emb_dev_burn">
+<title>嵌入式开发之烧录</title>
+<abstract></abstract>
+
+<sect1 xml:id="what_is_burn"><title>什么是烧录</title>
+    <para>烧录，英文叫做burn。</para>
+    <para>也常被叫做下载，download</para>
+    <para>指的是，把嵌入式开发期间，编译好的文件，往往又被称为固件，firmware。从你的当前搞嵌入式开发的PC机，也叫做主机端host，传输到你的目标平台，即开发板，真正用来存储和运行你的固件程序的地方。这个过程，就叫做烧录，下载。</para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="how_to_burn"><title>如何进行烧录</title>
+    <sect2 xml:id="burn_tools"><title>常见的烧录所用工具</title>
+        <para>下面是一些常见的，用的比较广泛的烧录工具：</para>
+        <itemizedlist>
+            <listitem>JLink
+                <para>Keil公司在<link xl:href="http://www.keil.com/flash/utilities.asp">Keil Flash Utility</link>就列举了很多，其中就有这个JLink</para>
+                <para>之前也折腾过很多：<link xl:href="http://www.crifan.com/use_the_cracked_version_of_jlink_to_achieve_the_development_of_the_external_board_of_nor_flash_programming__jlink_v408k_download/">使用破解版的JLink实现对开发板上的外部Nor Flash的烧写 + JLink V4.08k 下载地址</link></para>
+                <para></para>
+            </listitem>
+            <listitem>串口</listitem>
+            <listitem>USB接口类的工具
+                <para>比如e8a的开发板，自带USB接口的专门用于烧录e8a板子的特殊硬件</para>
+                <para></para>
+            </listitem>
+        </itemizedlist>
+        <para>其他还有一些小众的烧录工具，很多都是针对自己的开发板去烧录程序的工具：</para>
+        <itemizedlist>
+            <listitem>LPC2000 Flash Utility
+                <para><link xl:href="http://www.crifan.com/record_philips_flash_utility_lpc2000_isp/">【记录】安装Philips Flash Utility的Laubch LPC210x_ISP_V2.2.3.zip中的Philips Flash Utility Installation.exe</link></para>
+                <para></para>
+                <para></para>
+            </listitem>
+        </itemizedlist>
+        <para></para>
+    </sect2>
+
+    <sect2 xml:id="burn_method"><title>常见的烧录方式</title>
+        <para>其中比较常见的做法是：</para>
+        <itemizedlist>
+            <listitem>用JLink等工具，烧录uboot</listitem>
+            <listitem>在uboot中，通过串口，网卡等烧录kernel和rootfs</listitem>
+        </itemizedlist>
+        <para></para>
+        <para>详见：</para>
+        <para><link xl:href="http://www.crifan.com/files/doc/docbook/firmware_download/release/html/firmware_download.html">【详解】嵌入式开发中固件的烧录方式</link></para>
+    </sect2>
+</sect1>
+
+</chapter>

@@ -1,0 +1,421 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch01_emb_dev_background">
+<title>嵌入式软件开发相关背景知识</title>
+<abstract></abstract>
+
+<para>嵌入式是一个很大的概念，从不同的侧面去介绍，可以有不同的解读。</para>
+
+<sect1 xml:id="emb_industrial_domain"><title>嵌入式行业和领域</title>
+    <para>下面就先来说说，嵌入式行业，嵌入式的应用领域，都有哪些：</para>
+    <itemizedlist>
+        <listitem>消费类数码产品
+            <para>各种解决方案，各种嵌入式的CPU（MCU，SOC，DSP等等），对应的各种软件开发。</para>
+            <para>对应着各种产品，比如：</para>
+            <itemizedlist>
+                <listitem>MP3</listitem>
+                <listitem>音响</listitem>
+                <listitem>手机</listitem>
+                <listitem>PAD</listitem>
+                <listitem>相机</listitem>
+                <listitem>便携式导航
+                    <para></para>
+                    <figure xml:id="fg.embedded_app_navigation"><title>嵌入式应用之便携式导航</title>
+                        <mediaobject>
+                            <imageobject role="html"><imagedata fileref="images/embedded_app_navigation.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                            <imageobject role="fo">  <imagedata fileref="images/embedded_app_navigation.png" align="center" scalefit="1" width="100%"/></imageobject>
+                        </mediaobject>
+                    </figure>
+                    <para></para>
+                </listitem>
+                <listitem>游戏机外设</listitem>
+                <listitem>打印机</listitem>
+            </itemizedlist>
+        </listitem>
+        <listitem>工业控制和控制自动化
+            <para></para>
+            <para></para>
+            <itemizedlist>
+                <listitem>生产线上的机械手臂，细分叫做PLC</listitem>
+                <listitem>测量设备
+                    <para>如流量仪，阀门控制器等等，涉及到现场总线等技术</para>
+                </listitem>
+                <listitem>工业触摸屏控制系统</listitem>
+            </itemizedlist>
+        </listitem>
+        <listitem>医疗电子器械
+            <para>医疗行业内的嵌入式设备的软件开发</para>
+        </listitem>
+        <listitem>汽车电子
+            <para>除了技术，还有很多标准，比如SPICE等</para>
+        </listitem>
+        <listitem>仪器仪表
+            <para></para>
+        </listitem>
+        <listitem>智能家居
+            <para></para>
+            <figure xml:id="fg.embedded_app_intelligent_home"><title>嵌入式应用之智能家居</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/embedded_app_intelligent_home.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/embedded_app_intelligent_home.png" align="center" scalefit="1" width="100%" /></imageobject>
+                </mediaobject>
+            </figure>
+            <para></para>
+        </listitem>
+        <listitem>智能交通
+            <para></para>
+        </listitem>
+        <listitem>车载设备
+            <para></para>
+        </listitem>
+        <listitem>物联网终端
+            <para></para>
+        </listitem>
+        <listitem>安防监控
+            <para></para>
+            <figure xml:id="fg.embedded_app_security_safeguard"><title>嵌入式应用之安全防护</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/embedded_app_security_safeguard.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/embedded_app_security_safeguard.png" align="center" scalefit="1" width="100%" /></imageobject>
+                </mediaobject>
+            </figure>
+            <para></para>
+        </listitem>
+        <listitem>远程信息处理
+            <para></para>
+        </listitem>
+        <listitem>教学实验设备
+            <para></para>
+        </listitem>
+        <listitem>监控设备与各种人机界面
+            <para></para>
+        </listitem>
+        <listitem>节能环保
+            <para></para>
+        </listitem>
+        <listitem>能源节能
+            <para></para>
+        </listitem>
+        <listitem>电力系统
+            <para></para>
+            <figure xml:id="fg.embedded_app_electical_system"><title>嵌入式应用之电力系统</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/embedded_app_electical_system.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/embedded_app_electical_system.png" align="center" scalefit="1" width="100%"/></imageobject>
+                </mediaobject>
+            </figure>
+        </listitem>
+        <listitem>通讯系统
+            <para></para>
+        </listitem>
+        <listitem>纺织行业
+            <para></para>
+        </listitem>
+        <listitem>数控行业
+            <para></para>
+        </listitem>
+        <listitem>机器人视觉
+            <para></para>
+        </listitem>
+        <listitem>机器人视觉
+            <para></para>
+        </listitem>
+        <listitem>媒体处理无线应用
+            <para></para>
+        </listitem>
+        <listitem>数字家电
+            <para></para>
+        </listitem>
+        <listitem>通信设备
+            <para></para>
+        </listitem>
+        <listitem>网络终端
+            <para></para>
+        </listitem>
+    </itemizedlist>
+    <para>注意的是：其中，具体开发时，涉及的技术和任务不同，有的严格意义上来说，并不属于，偏底层的嵌入式，比如，android的app开发，其实是主要是用java写上层应用，不是那种，为某特定开发板，比如把android移植到三星手机的硬件平台，涉及到的底层驱动开发，这才是严格意义上的底层驱动开发。关于Android不是传统意义上的嵌入式的解释详见：</para>
+</sect1>
+
+<sect1 xml:id="emb_industry_chain"><title>嵌入式产业链</title>
+    <para>下面以一个典型的例子，来阐述，什么是嵌入式产业链。只有明白了嵌入式产业链的基本概念，才能真正理解后面要介绍到的嵌入式软件开发所处的层次和地位。</para>
+    <para>从芯片研发、量产、方案提供商、产品，中间会涉及到：</para>
+    <itemizedlist>
+        <listitem>arm专门设计cpu的ip core软核</listitem>
+        <listitem>三星制作cpu sc2440</listitem>
+        <listitem>某公司提供方案
+            <para>用该芯片，加上外设，提供方案，包括cpu,各种外设，以及嵌入式操作系统，整套的软硬件方案</para>
+        </listitem>
+        <listitem>然后卖方案给某品牌商
+            <para>比如爱国者，用此方案去，找设计人员设计外壳</para>
+        </listitem>
+        <listitem>再找模具厂生产模具</listitem>
+        <listitem>找代工厂生产整套的核心电路板
+            <para>最后组装成</para>
+        </listitem>
+        <listitem>消费者
+            <para>看见的，成品，电子书。</para>
+        </listitem>
+    </itemizedlist>
+    <para>大概过程就是如此。</para>
+    <para>而你做的事情就是，在该卖方案的公司中，为那套方案中的软件部分，即嵌入式linux写各种外设和接口的驱动，比如nand flash驱动，sd卡驱动，i2c驱动等。这才是一种典型的嵌入式开发。然后你才知道你处在整个产业链中的什么位置，知道你在干什么。</para>
+</sect1>
+
+
+<sect1 xml:id="emb_industry_overview"><title>嵌入式行业概览</title>
+    <para>关于嵌入式行业的从业情况，包括公司，人员，技术，工具等等方面的概况，详细很多人和我一样，都是希望有个宏观的了解的。</para>
+    <para>后来巧了，发现华清远见每年都这方面的调查，此处摘录当前最新的2014年的<link xl:href="http://www.farsight.com.cn/subject/survey2013-2014.htm">2013-2014年中国嵌入式开发从业人员大调查</link></para>
+    <para>的结果：<link xl:href="http://www.farsight.com.cn/subject/report2013-2014.htm">2013-2014（第六届）中国嵌入式开发从业人员调查报告隆重推出</link></para>
+    <para>对应报告是：<link xl:href="http://download.farsight.com.cn/download/pdf/EmbeddedReport2013-2014.pdf">2013-2014 年（第六届）中国嵌入式开发从业人员调查报告</link></para>
+    <para>顺带列上之前几年的调查结果：</para>
+    <itemizedlist>
+        <listitem><link xl:href="http://download.farsight.com.cn/download/pdf/EmbeddedReport2012-2013.pdf">2012-2013年中国嵌入式开发从业人员调查报告</link></listitem>
+        <listitem><link xl:href="http://download.farsight.com.cn/download/pdf/EmbeddedReport2011-2012.pdf">2011-2012年中国嵌入式开发从业人员调查报告</link></listitem>
+        <listitem><link xl:href="http://download.farsight.com.cn/download/pdf/EmbeddedReport2010-2011.pdf">2010-2011年中国嵌入式开发从业人员调查报告</link></listitem>
+        <listitem><link xl:href="http://download.farsight.com.cn/download/pdf/Embedded-Report2.pdf">2009-2010年中国嵌入式开发从业人员调查报告</link></listitem>
+        <listitem><link xl:href="http://download.farsight.com.cn/download/pdf/Embedded-Report.pdf">2008-2009年中国嵌入式开发从业人员调查报告</link></listitem>
+    </itemizedlist>
+    <para>下面列出2014年的结果如下，供大家参考：</para>
+    <sect2 xml:id="emb_industry_2014_work_experience"><title>2014年嵌入式行业从业人员：工作经验</title>
+        <figure xml:id="fg.emb_industry_2014_work_experience"><title>2014年嵌入式行业从业人员：工作经验</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_work_experience.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_work_experience.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_education_background"><title>2014年嵌入式行业从业人员：学历要求</title>
+        <figure xml:id="fg.emb_industry_2014_education_background"><title>2014年嵌入式行业从业人员：学历要求</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_education_background.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_education_background.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_location"><title>2014年嵌入式行业从业人员：地域分布</title>
+        <figure xml:id="fg.emb_industry_2014_location"><title>2014年嵌入式行业从业人员：地域分布</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_location.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_location.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_previous_field"><title>2014年嵌入式行业从业人员：嵌入式开发前的研发方向</title>
+        <figure xml:id="fg.emb_industry_2014_previous_field"><title>2014年嵌入式行业从业人员：嵌入式开发前的研发方向</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_previous_field.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_previous_field.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_salary"><title>2014年嵌入式行业从业人员：薪资水平</title>
+        <figure xml:id="fg.emb_industry_2014_salary"><title>2014年嵌入式行业从业人员：薪资水平</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_salary.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_salary.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_language"><title>2014年嵌入式行业从业人员：软件开发语言的选择</title>
+        <figure xml:id="fg.emb_industry_2014_language"><title>2014年嵌入式行业从业人员：软件开发语言的选择</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_language.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_language.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_field"><title>2014年嵌入式行业从业人员：所属行业分布情况</title>
+        <figure xml:id="fg.emb_industry_2014_field"><title>2014年嵌入式行业从业人员：所属行业分布情况</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_field.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_field.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_company_scale"><title>2014年嵌入式行业从业人员：公司规模</title>
+        <figure xml:id="fg.emb_industry_2014_company_scale"><title>2014年嵌入式行业从业人员：公司规模</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_company_scale.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_company_scale.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_os"><title>2014年嵌入式行业从业人员：软件开发平台的选择</title>
+        <figure xml:id="fg.emb_industry_2014_os"><title>2014年嵌入式行业从业人员：软件开发平台的选择</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_os.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_os.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_debug_tool"><title>2014年嵌入式行业从业人员：软件开发调试工具的选择</title>
+        <figure xml:id="fg.emb_industry_2014_debug_tool"><title>2014年嵌入式行业从业人员：软件开发调试工具的选择</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_debug_tool.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_debug_tool.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_hardware_cpu"><title>2014年嵌入式行业从业人员：硬件开发平台的选择</title>
+        <figure xml:id="fg.emb_industry_2014_hardware_cpu"><title>2014年嵌入式行业从业人员：硬件开发平台的选择</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_hardware_cpu.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_hardware_cpu.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_chip_vendor"><title>2014年嵌入式行业从业人员：处理器芯片的选择</title>
+        <figure xml:id="fg.emb_industry_2014_chip_vendor"><title>2014年嵌入式行业从业人员：处理器芯片的选择</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_chip_vendor.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_chip_vendor.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_soft_and_hw"><title>2014年嵌入式行业从业人员：软硬件人员的安排</title>
+        <figure xml:id="fg.emb_industry_2014_soft_and_hw"><title>2014年嵌入式行业从业人员：软硬件人员的安排</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_soft_and_hw.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_soft_and_hw.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_future_os"><title>2014年嵌入式行业从业人员：未来嵌入式操作系统首选</title>
+        <figure xml:id="fg.emb_industry_2014_future_os"><title>2014年嵌入式行业从业人员：未来嵌入式操作系统首选</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_future_os.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_future_os.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_prefer_direction"><title>2014年嵌入式行业从业人员：最想选择的嵌入式应用方向</title>
+        <figure xml:id="fg.emb_industry_2014_prefer_direction"><title>2014年嵌入式行业从业人员：最想选择的嵌入式应用方向</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_prefer_direction.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_prefer_direction.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_get_tech"><title>2014年嵌入式行业从业人员：获取专业知识的途径</title>
+        <figure xml:id="fg.emb_industry_2014_get_tech"><title>2014年嵌入式行业从业人员：获取专业知识的途径</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_get_tech.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_get_tech.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_search_engine"><title>2014年嵌入式行业从业人员：首选搜索引擎</title>
+        <figure xml:id="fg.emb_industry_2014_search_engine"><title>2014年嵌入式行业从业人员：首选搜索引擎</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_search_engine.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_search_engine.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_company_need"><title>2014年嵌入式行业从业人员：企业人才需求现状</title>
+        <figure xml:id="fg.emb_industry_2014_company_need"><title>2014年嵌入式行业从业人员：企业人才需求现状</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_company_need.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_company_need.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_money_satisfaction"><title>2014年嵌入式行业从业人员：对工作薪资的满意度</title>
+        <figure xml:id="fg.emb_industry_2014_money_satisfaction"><title>2014年嵌入式行业从业人员：对工作薪资的满意度</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_money_satisfaction.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_money_satisfaction.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+    <sect2 xml:id="emb_industry_2014_treat_training"><title>2014年嵌入式行业从业人员：如何看待培训</title>
+        <figure xml:id="fg.emb_industry_2014_treat_training"><title>2014年嵌入式行业从业人员：如何看待培训</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/emb_industry_2014_treat_training.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/emb_industry_2014_treat_training.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+    </sect2>
+
+
+</sect1>
+
+<sect1 xml:id="emb_sw_hw_coorperation"><title>嵌入式软硬件厂商的合作关系</title>
+	<para>搞嵌入式开发，对于一些背景知识，也需要了解一下，比如：</para>
+	<para>嵌入式领域内的软硬件厂商是互相合作的，以及各种不同公司之间的合作关系</para>
+	<para>比如：之前去购买蓝牙HART猫：</para>
+	<para><link xl:href="http://www.crifan.com/record_use_paypal_buy_bluetooth_hart_modem_from_foreign_online_website/">【记录】用PayPal从国外在线网站上购买蓝牙HART猫</link></para>
+	<para>卖家是<link xl:href="http://www.mactekcorp.com/" />的Garry Cusick，其是销售总监</para>
+	<para>Garry Cusick针对订单的情况，去找公司内部的Thomas Holmes核实之后，Thomas Holmes再去安排发货的事情。</para>
+	<para>但是去发货时，<link xl:href="http://www.crifan.com/query_fedex_global_delivery/">【记录】查询Fedex的国际快递</link>，</para>
+	<para>却是从该公司的合作伙伴<link xl:href="http://www.avid-tech.com/" />的Erica Deliere去给我发货的。</para>
+	<para>由此可见MACTeck和Avid-tech应该是合作伙伴，并且很可能是：</para>
+	<para>作为研发蓝牙HART猫的MACTeck，虽然具有对应的技术，但是没有生产部门，也不负责生产，所以最终量产时找的是Avid-tech这家代工厂</para>
+	<para>所以，最终普通用户去购买产品时，最终是从代工厂Avid-tech去发的货。</para>
+	<para>然后Avid-tech再去选择Fedex这个国际通用的物流公司，去把东西寄给国外的用户</para>
+	<para>相应的，作为买家的我会收到：</para>
+	<itemizedlist>
+		<listitem>A：来自Avid-tech的邮件，告诉我说已经用Fedex发货给我了，且给出了订单号</listitem>
+		<listitem>B：我也会收到从Fedex系统中发出的发货通知，也可以用订单号去查询和最终货物的物流详情。</listitem>
+	</itemizedlist>
+	<para></para>
+	<para>总之：</para>
+	<para>搞软件开发，搞嵌入式软件开发，对于各种相关公司的关系和背景，也要有所了解，否则都弄不懂东西是谁做的，而无法及时有效的沟通。</para>
+	<para></para>
+	<para></para>
+	<para></para>
+	<para>另外一个证明各个厂商之间的合作关系的例子：</para>
+	<para>segger的<link xl:href="http://www.segger.com/emwin-source-code-upgrade.html">emWin的升级</link>，就以二进制库的形式，支持合作客户去升级，包括：</para>
+    <itemizedlist>
+        <listitem>ARM/KEIL as part of the MDK Pro package</listitem>
+        <listitem>Cypress as download from cypress.com</listitem>
+        <listitem>Infineon as part of the Dave3 installation</listitem>
+        <listitem>NXP as download from lpcware.com</listitem>
+        <listitem>Silicon Labs as part of the Simplicity Studio for EFM32 devices</listitem>
+        <listitem>ST as part of the STemWin graphic software</listitem>
+    </itemizedlist>
+	<para>等等。</para>
+	<para></para>
+	<para>其他还有：Segger是ARM的合作伙伴</para>
+	<para>通过<link xl:href="http://www.arm.com/community/partners/display_product/rw/ProductId/2210/" />的<link xl:href="http://www.arm.com/community/partners/">Partners</link>可以看到：<link xl:href="http://www.arm.com/community/partners/display_company/rw/company/segger-microcontroller-gmbh-co-kg">SEGGER Microcontroller GmbH &amp; Co. KG</link>的<link xl:href="http://www.arm.com/community/partners/display_product/rw/ProductId/2210/#">embOS, Real-Time Operating System</link>
+    </para>
+	<para>从中可以看出segger是ARM的合作伙伴</para>
+	<para>然后通过<link xl:href="http://www.arm.com/community/partners/all_partners.php" />发现，ARM的合作伙伴，有一堆，非常多。。。</para>
+	<para></para>
+</sect1>
+
+</chapter>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch14_emb_dev_inter_bus_protocol">
+<title>嵌入式软件开发相关接口和协议</title>
+<abstract></abstract>
+
+<para>嵌入式软件方面的开发期间，会遇到各种常见的协议、接口、总线等等。</para>
+<para>下面就来总结一下，常见的协议和接口，总线。</para>
+<para></para>
+
+<sect1 xml:id="emb_bus_internal"><title>嵌入式总线之内部总线</title>
+    <para></para>
+    <para></para>
+
+    <sect2 xml:id="emb_bus_mipi"><title>嵌入式内部总线之MIPI</title>
+        <para>以前都没听说过MIPI。后来无意间在cadence的一个资料中看到了MIPI，说是目的是以后代替其他所有的内部总线：</para>
+        <figure xml:id="fg.mipi_bus_aim_replace_all_internal_bus"><title>用于取代其他内部总线的MIPI总线</title>
+            <mediaobject>
+                <imageobject role="html"><imagedata fileref="images/mipi_bus_aim_replace_all_internal_bus.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                <imageobject role="fo">  <imagedata fileref="images/mipi_bus_aim_replace_all_internal_bus.png" align="center" scalefit="1" width="100%"/></imageobject>
+            </mediaobject>
+        </figure>
+        <para>貌似上述的内部总线，都会被MIPI取代，好像是包含C-PHY, D-PHY, M-PHY, and UniPro</para>
+        <para></para>
+    </sect2>
+
+    <sect2 xml:id="emb_bus_amba"><title>嵌入式内部总线之AMBA</title>
+        <para></para>
+        <para></para>
+        <para></para>
+        <para></para>
+    </sect2>
+</sect1>
+
+<sect1 xml:id="emb_bus_external"><title>嵌入式总线之外部总线</title>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+
+</chapter>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch16_emb_dev_article">
+<title>嵌入式软件开发方面的值得借鉴的帖子</title>
+<abstract></abstract>
+
+<para>在嵌入式开发领域，有很多的别的走过的路，做过的事情，值得参考和借鉴的。整理如下：</para>
+<para><link xl:href="http://bbs.csdn.net/topics/40212259">我希望成为一个优秀的IT人，我已经努力了七年</link></para>
+<para>后，感悟：也是可以去继续学习硬件电路设计的大不了，靠自己自学。毕竟现在算是有了一定的基础，足够的网络资源，足够的学习方法，</para>
+<para>善于组织和利用的话，还是可以靠自己，一点点积累出来对应的硬件机能的。如此，加上自己对软件的理解，才能最终算是对于计算机的软件和硬件，都有自己的理解，才可能设计出好的东西</para>
+<para></para>
+<para></para>
+<para></para>
+<para>这句我觉得说的不错：<link xl:href="http://bbs.csdn.net/topics/40212259?list=lz" /></para>
+<para>to DancingCalf(未出手的飞刀) : 其实并没有本质上的改变，我一直在IT行业学习工作。让我作出改变的原因是我想做的更加深入，可以说 一个对操作系统不了解的人很难写出优秀的应用系统，对硬件不了解的人也不可能深刻理解操作系统，同样对IC不了解的人也无法真正理解硬件，这决定了我的发 展方向。当然这样是无穷无尽的，这也应了那句古言“学无止境”。一个人不可能学会全部的知识，但我不想用这个理由为自己的停滞不前做解释。 
+</para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+
+</chapter>

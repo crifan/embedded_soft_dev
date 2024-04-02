@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch03_emb_dev_basic_concept">
+<title>嵌入式软件开发的基本名词和概念</title>
+<abstract></abstract>
+
+<para>嵌入式领域内，有很多常见的基本概念和名词，对于初学者来说，往往是听都没听过这些词，更别说明白其含义了。</para>
+<para>此处就整理一下，我所知道的一些嵌入式领域内的常见的概念和名词的含义。</para>
+<para></para>
+<para></para>
+
+<sect1 xml:id="dev_suite"><title>开发套件==开发组件==develop suite==develop tookit=StartKit=DevBoard</title>
+    <para>比如：<link xl:href="http://ww1.microchip.com/downloads/en/DeviceDoc/39904k_tw.pdf">具备USB，CAN和以太网功能的PIC32微控制器系列</link>中的：</para>
+    <figure xml:id="fg.pic32_entry_dev_suite"><title>PIC32入门套件</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/pic32_entry_dev_suite.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/pic32_entry_dev_suite.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <figure xml:id="fg.pic32_dev_tools_choose_platform"><title>PIC32开发工具</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/pic32_dev_tools_choose_platform.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/pic32_dev_tools_choose_platform.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <para>就是：</para>
+    <para>开发套件</para>
+    <para>= 硬件+软件</para>
+    <para>= 硬件开发板 + 集成的IDE 或 单独提供的编译器，示例代码等内容</para>
+    <para>其他的，各种平台的，往往也会提供对应的，硬件（开发板，模块等等）+软件（软件源码，示例代码，驱动等等）的组合，叫做对应的Tookit，即工具套件</para>
+    <para>成套提供，以套餐方式的提供</para>
+    <para>类似的词还有：StartKit，DevBoard</para>
+    <para>也都是，方便用户进行快速上手开发的开发板</para>
+    <para>目的是：</para>
+    <para>方便其用户，作为嵌入式开发的你，尽快的上手，能够跑通这个平台，能用于构建你的嵌入式系统，</para>
+    <para>能够进行接下来的，你所需要的相关的软硬件方面的开发。</para>
+    <para>其背景是：</para>
+    <para>如果芯片厂家，直接把一款芯片扔给你，给你用；</para>
+    <para>不仅是新手，即使是老手，嵌入式有经验的，也要相对很耗精力，才能搞懂如何初始化，如何让其运行起来，即跑起来，需要花不少的精力</para>
+    <para>因为嵌入式领域，芯片不同，细节会千差万别，所需要了解的细节也很多。</para>
+    <para>所以，才有：</para>
+    <para>卖芯片的厂家，除了设计，量产，销售芯片给作为客户当你之外，</para>
+    <para>往往还有对应的所谓的开发套件，</para>
+    <para>即硬件（芯片或开发板）加上对应的软件（驱动，示例代码）</para>
+    <para>然后让芯片尽快的，正常的跑起来</para>
+    <para>之后才是作为嵌入式开发者的你，继续后续折腾，实现对应的你自己的功能。</para>
+    <para></para>
+    <para>举例：</para>
+    <itemizedlist>
+        <listitem><link xl:href="http://www.ti.com.cn/lsds/ti_zh/microcontroller/16-bit_msp430/overview.page">MSP430微控制器 | 16 位微控制器 | 16位MCU – 概述</link>中就有&quot;MSP430 套件与评估模块&quot;，指的就是可以去用于开发工作的一堆成套的相关工具。</listitem>
+        <listitem><link xl:href="http://www.microchip.com/pagehandler/en-us/family/32bit/" />中就有对应的StartKit + Development Board的组合。</listitem>
+    </itemizedlist>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="part_number"><title>Part Number==模块编号==产品编号</title>
+    <para>不仅各种硬件模块有Part Number</para>
+    <para>软件（或库，组件等）也有</para>
+    <para>比如：<link xl:href="http://www.microchip.com/stellent/idcplg?IdcService=SS_GET_PAGE&amp;nodeId=1406&amp;dDocName=cn019469">MPLAB Integrated Development Environment</link>的&quot;Part Number: SW007002&quot;表示：</para>
+    <para>Part Number==作为该软件或硬件的标示==就像人的身份证</para>
+    <para>-&gt; 你想要买人家的产品（某软件或硬件），只需要告诉人家对应的Part Number即可</para>
+    <para>-&gt;人家就知道你要买的，具体是哪个东西了。</para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="fabless"><title>fabless==无厂半导体公司==无工厂的IC设计公司</title>
+    <para>简单说就是：专门设计芯片的，但是没有自己的制造工厂。</para>
+    <para>是自己设计出芯片后，找其他的，专门制造生产芯片的公司去生产，对应的生产芯片的公司，也是下面将要介绍的，Foundry。</para>
+    <para></para>
+    <para>比如：<link xl:href="http://zh.wikipedia.org/wiki/%E5%A8%81%E7%9B%9B%E9%9B%BB%E5%AD%90">威盛电子 - 维基百科，自由的百科全书</link>就是一个fabless</para>
+    <para>全球范围内的fabless，非常非常多。</para>
+    <para>维基百科有些统计，可供参考：</para>
+    <para><link xl:href="http://en.wikipedia.org/wiki/Category:Fabless_semiconductor_companies">Category:Fabless semiconductor companies - Wikipedia, the free encyclopedia</link></para>
+    <para><link xl:href="http://en.wikipedia.org/wiki/Fabless_manufacturing">Fabless manufacturing - Wikipedia, the free encyclopedia</link></para>
+    <para>其中里面比较典型的一些企业有：AMD，ARM，ATI，Broadcom‎，Marvell，MediaTek，Qualcomm，Realtek，Rockchip，Silicon Labs，Tensilica，VIA，Xilinx</para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="foundry"><title>foundry==晶圆厂==晶圆代工厂==代工厂</title>
+    <para>简单说就是：专门生产芯片的公司</para>
+    <para>详细的说：专业的叫法叫做，专业集成电路制造服务类的企业</para>
+    <para>详见：<link xl:href="http://en.wikipedia.org/wiki/Foundry">Foundry - Wikipedia, the free encyclopedia</link></para>
+    <para>世界上最大的、最有名的要数，台积电，了。</para>
+    <para>详见：</para>
+    <para><link xl:href="http://zh.wikipedia.org/wiki/%E5%8F%B0%E7%81%A3%E7%A9%8D%E9%AB%94%E9%9B%BB%E8%B7%AF%E8%A3%BD%E9%80%A0%E5%85%AC%E5%8F%B8">台湾积体电路制造公司 - 维基百科，自由的百科全书</link></para>
+    <para>另外其他还有一些小的晶圆厂，比如AMS==奥地利微电子，也有自己的晶圆厂。</para>
+    <para>详见：<link xl:href="http://www.cannews.com.cn/2013/0906/45621.shtml">AMS公司投2500万欧元建三维堆叠集成电路制造能力_全球军情_全球防务频道_新闻中心</link>，<link xl:href="http://express.cetin.net.cn:8080/cetin2/servlet/cetin/action/HtmlDocumentAction;jsessionid=AF2B8EDC2B2181874CCB65508F6F20FB?baseid=108&amp;docno=152977">奥地利计划购买200毫米晶圆代工厂以加强晶圆制造能力</link></para>
+    <para></para>
+    <para>其他相关资料：</para>
+    <para><link xl:href="http://mall.cnki.net/magazine/article/YQJY200302000.htm">混合集成电路的Fabless之路-《电子元器件应用》2003年02期-中国知网</link></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="ip_core"><title>IP Core==IP核==软核</title>
+    <para>谈到fabless，往往就会涉及到一个概念：IP Core。</para>
+    <para>因为，这类fabless，就只是设计芯片，对应的产出就是对应的IP Core。</para>
+    <para>举个类似的例子：fabless设计出IP Core或者叫做芯片，拿去给Foundry去生产</para>
+    <para>就类似于，建筑设计院设计出一栋大楼的图纸，拿去给建筑商去建造出来，是一个道理。</para>
+    <para>fabless有设计能力，foundry有生产能力</para>
+</sect1>
+
+<sect1 xml:id="mass_production"><title>量产</title>
+    <para>此处的量产，有两种含义：</para>
+    <sect2 xml:id="mass_production_chip"><title>批量生产芯片</title>
+        <para>一般指的是：某芯片设计公司fabless设计出来了芯片，然后拿去让代工厂foundry生产真正的，物理上的，你所能看得见摸得着的，芯片。</para>
+        <para></para>
+        <para></para>
+    </sect2>
+    <sect2 xml:id="reburn_udisk_firmware"><title>重新烧录U盘的固件</title>
+        <para>烧录固件到已有的嵌入式设备（尤其是U盘）上</para>
+        <para>不过，量产还有另外一种意思，就是已经有了对应的可以使用的某设备。</para>
+        <para>尤其是U盘，然后重新用烧录工具，将另外一个新版本的程序，一般叫做固件，烧录进去</para>
+        <para>实现功能的改进，比如将原先的U盘，弄成CDROM+U盘的形式。</para>
+        <para>相关细节可参考我之前的一些折腾：</para>
+        <link xl:href="http://www.crifan.com/teach_you_to_understand_u_disk_from_mass_production_to_mass_production_success_-gt_apacer_ah320_smile_dish_8g_detailed_production_process/">【教你从不懂U盘量产到量产成功 -> 宇瞻AH320微笑碟8G详细量产过程】</link>
+        <link xl:href="http://www.crifan.com/sencond_time_mass_production_transcend_16gb_usb_3-0_disk_to_usb_cdrom/">【记录】Transcend创见16GB USB3.0 U盘 第二次重新量产为USB+CDROM</link>
+        <link xl:href="http://www.crifan.com/again_make_bootable_win7_usb_disk/">【记录】第四次折腾U盘量产以制作Win7启动U盘</link>
+        <para></para>
+    </sect2>
+</sect1>
+
+<sect1 xml:id="vfp_floating_point_processor"><title>VFP 浮点处理器</title>
+    <para>用于专门处理浮点数据的处理器。</para>
+    <para>嵌入式领域内，谈到浮点处理时，往往会提到这个：VFP，浮点处理器</para>
+    <para>比如：</para>
+    <para><link xl:href="http://www.freescale.com/zh-Hans/webapp/sps/site/prod_summary.jsp?code=i.MX6D#prettyPhoto[iframes]/0/" /></para>
+    <para>中提到的：ARM的NEON的VFP</para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="footprint"><title>代码空间占用大小：footprint</title>
+    <para>footprint的英文本意是：脚印</para>
+    <para>放在嵌入式领域内，指的是：软件类的东西（比如一个操作系统，某个软件，某个协议栈等等），所占用的存储空间的大小。</para>
+    <para>可以理解为：嵌入式系统中，把软件，看成一个人，此人在RAM或ROM等存储空间上，所踩出来的脚印。</para>
+    <para>与此相关的，在介绍某软件，组件的优点时，说的更多的是“small footprint”这个词。</para>
+    <para>随便举个例子：</para>
+    <para><link xl:href="http://rtos.com/products/threadx/">RTOS – Real-Time Operating Systems for Embedded Development, Real Time System By Express Logic</link></para>
+    <para>中，ThreadX这个嵌入式操作系统，在解释其优势的时候，其中一条就是：“Small Footprint”</para>
+    <para>指的就是：</para>
+    <para>此ThreadX嵌入式操作系统，所需要的RAM或ROM等存储空间相对较小</para>
+    <note xml:id="note.emb_space_limit"><title>嵌入式的存储空间往往都有限所以占用空间小就省空间就是优势</title>
+        <para>此处有个背景知识：</para>
+        <para>嵌入式系统中，往往是RAM或ROM等存储空间很有限，所以需要运行在其中的嵌入式操作系统，以及程序，要尽量少的占用这些空间，</para>
+        <para>这所谓，放得下，跑得起来，才行。所以，占用相对较小的存储空间，这点对于嵌入式系统来说，就是个很大的优势了。</para>
+        <para>所以ThreadX在介绍其自己的特点时，才拿Small footprint来说事的。</para>
+    </note>
+</sect1>
+
+</chapter>

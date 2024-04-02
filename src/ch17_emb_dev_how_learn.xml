@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch18_emb_dev_how_learn">
+<title>如何学习嵌入式软件开发</title>
+<abstract></abstract>
+
+<para>要写优质的教程，让别人看得懂的教程，才有价值。</para>
+<para>而关于如何写教程，举个例子：</para>
+<para>看了这个：</para>
+<para><link xl:href="http://www.crifan.com/based_on_s3c2410_linux_driver_sd_card_works/">基于S3C2410的SD卡linux驱动工作原理</link></para>
+<para>后，所想到的：</para>
+<para>如果我去写对应的该部分的内容，那么应该是：</para>
+<orderedlist>
+    <listitem>先去解释说明，当没有Linux，Uboot等各种框架时，裸的驱动，是如何实现的
+        <para>最好把全部代码贴出来</para>
+        <para>或者至少把驱动核心部分框架和核心代码贴出来。</para>
+    </listitem>
+    <listitem>然后再去说，对于这样的裸驱动来说，其全部的活，被（Linux，Uboot等）框架，做了哪些
+        <para>只有搞懂了，框架帮你做了哪些了</para>
+        <para>然后你才懂，余下来的事情，就是自己需要实现的了。</para>
+        <para></para>
+    </listitem>
+    <listitem>搞懂需要实现哪些接口函数
+        <para>再去一点点，搞懂函数的接口和内部实现的逻辑</para>
+        <para>然后再去写代码，一点点实现</para>
+        <para>再去边调试边写驱动的代码</para>
+    </listitem>
+</orderedlist>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para>网上有很多嵌入式教程写的都不够透彻，没将明白要修改文件背后的逻辑，为何要这么修改。</para>
+<para>比如：<link xl:href="http://jesserei.blog.163.com/blog/static/1214116892009931103415765/">mini2440 u-boot-2009.03 移植最详细攻略</link></para>
+<para>说实话，已经写的，算是步骤相对比较详细了。</para>
+<para>但是：</para>
+<para>最核心的，最根本的：</para>
+<para>如何移植，为何要改这些文件</para>
+<para>以及背后的逻辑，都没有解释</para>
+<para>导致的结果：</para>
+<para>除非本身对这方面的移植已经有概念的</para>
+<para>否则，很容易看着一头雾水：</para>
+<para>感觉就是：</para>
+<para>这个文件改改</para>
+<para>那个文件改改</para>
+<para>而且为何这么修改，往往解释的也不够清楚和详细</para>
+<para>使得：</para>
+<para>如果自己拿到对应的源码，对应的硬件</para>
+<para>对于如何移植，还是一头雾水</para>
+<para>所以，抽空自己去：</para>
+<para>亲自折腾一遍移植</para>
+<para>并且详细记录步骤</para>
+<para>如果要修改文件或其他地方</para>
+<para>一定要解释清楚背后的逻辑</para>
+<para>然后等移植完毕</para>
+<para>再花时间，搞懂uboot的框架</para>
+<para>搞懂如果从头到尾，自己亲力亲为，从无到有的，去移植Uboot</para>
+<para>背后的逻辑是啥</para>
+<para>需要关心哪些功能</para>
+<para>这些功能Uboot中已经有了什么（框架，驱动）了。</para>
+<para>还需要我们去实现哪些东西</para>
+<para>以及，具体再解释，针对每个要改的功能模块</para>
+<para>自己应该如何去改</para>
+<para>所以要：</para>
+<para>思路清晰</para>
+<para>再去下手</para>
+<para>否则：</para>
+<para>永远都是：只能照葫芦画瓢，而且画的还不像</para>
+<para>只有：</para>
+<para>自己搞懂逻辑和概念了，</para>
+<para>才能：</para>
+<para>不仅可以快速高效的，照葫芦画瓢，而且如果需要，也可以自己从无到有的去涉及一个葫芦或一个瓢（可供别人当参考）</para>
+<para>结论：</para>
+<para>抽空先自己搞懂如何移植Uboot，然后再抽空整理出思路和有参考价值的教程。</para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+<para></para>
+
+</chapter>

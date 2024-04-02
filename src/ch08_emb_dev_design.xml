@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch08_emb_dev_design">
+<title>嵌入式开发之系统设计</title>
+<abstract></abstract>
+
+<sect1 xml:id="emb_design_choose_hw"><title>嵌入式系统设计之硬件选型</title>
+    <para>硬件选型时需要根据所需的硬件资源情况去选择合适芯片</para>
+    <para>比如： </para>
+    <figure xml:id="fg.pic32_product_series"><title>PIC32系列产品中有各种不同资源</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/pic32_product_series.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/pic32_product_series.png" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <para>就列出来了，不同芯片，所具体的不同资源：</para>
+    <para>是否有所需要的功能模块</para>
+    <para>以及部分功能模块的数量：根据需要选择满足你的需求的芯片</para>
+    <para>比如：</para>
+    <para>需要性能相对高的，所要CPU的频率相对高 -&gt; 才能流畅的跑很多复杂的，资源消耗多的应用</para>
+    <para>其他比如， SPI等接口的个数，决定了，你如果外接某些设备，比如SPI的Wifi芯片，至少占用1个SPI接口，</para>
+    <para>如果还有其他的模块需要SPI接口，则需要考虑SPI接口总数是否够用</para>
+    <para>类似的，还有I2C，UART等其他接口，都需要根据自己的实际需求，决定所需要的接口的个数，是否够用</para>
+    <para>另外还有类似的DMA：</para>
+    <para>有些Nand Flash，SD卡等模块，为了提高数据传输速度，则可以用DMA来实现</para>
+    <para>所以，如果系统中Nand Flash，SD卡，都需要DMA，那么此时至少需要2个DMA通道。所以，需要选择DMA通道个数大于2的芯片。</para>
+    <para>其中，关于DMA，不了解的可参考： <link xl:href="http://www.crifan.com/files/doc/docbook/dma_pl08x_analysis/release/html/dma_pl08x_analysis.html">详解ARM的AMBA设备中的DMA设备PL08X的Linux驱动</link></para>
+    <para></para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_design_procedure"><title>嵌入式系统设计流程</title>
+    <para>说实话，自己没有真正独立的从无到有的设计一个嵌入式系统，所以整理出来的内容，也是参考别人写的内容。</para>
+    <para>截至目前，尤其是也没发现，有解释的够详细的，暂时看到了点资料，整理过来，仅供参考：</para>
+    <para><link xl:href="http://www.uml.org.cn/embeded/pdf/embed_design.pdf" /></para>
+    <figure xml:id="fg.embedded_design_from_start_to_end_flow"><title>嵌入式开发流程图</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/embedded_design_from_start_to_end_flow.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/embedded_design_from_start_to_end_flow.png" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <para></para>
+</sect1>
+
+</chapter>

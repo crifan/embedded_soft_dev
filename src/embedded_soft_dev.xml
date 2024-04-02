@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE book
+[
+
+<!ENTITY cur_book_name      "embedded_soft_dev" >
+<!ENTITY publish_date       "2015-05-25" >
+<!ENTITY release_version    "1.5.2" >
+
+<!ENTITY copyrith_year "2015" >
+<!ENTITY entity_common_multi_format     SYSTEM  "../../entity_common_multi_format.xml">
+<!ENTITY entity_common_publish_info     SYSTEM  "../../entity_common_publish_info.xml">
+]>
+
+<book version="5.0"
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xml:lang="zh_CN"
+    >
+
+<info>
+    <title>嵌入式软件开发</title>
+    <subtitle></subtitle>
+    <keywordset>
+        <keyword>嵌入式</keyword>
+        <keyword>软件</keyword>
+        <keyword>开发</keyword>
+        <keyword>行业背景</keyword>
+    </keywordset>
+
+    <abstract>
+        <para>此文主要介绍的嵌入式软件开发的背景知识，基本逻辑和流程，基本名词、概念和理念，嵌入式开发环境的基本组成，交叉编译和交叉编译器，烧录，工具，系统设计，嵌入式CPU，嵌入式资源，常见问题及解答。</para>
+        &entity_common_multi_format;
+    </abstract>
+
+    <revhistory>
+        <revision>
+            <revnumber>&release_version;</revnumber>
+            <date>&publish_date;</date>
+            <revremark>
+                <orderedlist>
+                    <listitem>增加嵌入式软件开发的背景知识</listitem>
+                    <listitem>增加嵌入式基本的组成和流程的介绍</listitem>
+                    <listitem>增加嵌入式行业从业人员概览</listitem>
+                    <listitem>把portfolio移到软件通用知识中</listitem>
+                    <listitem>添加解释Android和Linux是不同的</listitem>
+                    <listitem>更新嵌入式开发工具，添加嵌入式CPU的应用领域</listitem>
+                </orderedlist>
+            </revremark>
+            <authorinitials>crl</authorinitials>
+        </revision>
+    </revhistory>
+
+    &entity_common_publish_info;
+</info>
+
+<xi:include href="preface.xml"/>
+<xi:include href="ch01_emb_dev_background.xml"/>
+<xi:include href="ch02_emb_dev_basic_logic.xml"/>
+<xi:include href="ch03_emb_dev_basic_concept.xml"/>
+<xi:include href="ch04_emb_dev_composition.xml"/>
+<xi:include href="ch05_emb_dev_crosstoolchain.xml"/>
+<xi:include href="ch06_emb_dev_burn.xml"/>
+<xi:include href="ch07_emb_dev_tools.xml"/>
+<xi:include href="ch08_emb_dev_design.xml"/>
+<xi:include href="ch09_emb_dev_cpu.xml"/>
+<xi:include href="ch10_emb_dev_peripheral.xml"/>
+<xi:include href="ch11_emb_dev_related_hardware.xml"/>
+<xi:include href="ch12_emb_dev_vendor.xml"/>
+<xi:include href="ch13_emb_dev_inter_bus_protocol.xml"/>
+<xi:include href="ch14_emb_dev_faq.xml"/>
+<xi:include href="ch15_emb_dev_article.xml"/>
+<xi:include href="ch16_emb_dev_res.xml"/>
+<xi:include href="ch17_emb_dev_how_learn.xml"/>
+<xi:include href="reference.xml"/>
+
+</book>

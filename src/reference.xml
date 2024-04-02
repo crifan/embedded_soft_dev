@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<bibliography
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+
+    xml:id="reference">
+
+<bibliomixed id="ref.zhihu_about_emb_driver_learn">
+  <bibliosource><link xl:href="http://www.zhihu.com/question/21457018/answer/19517807">关于嵌入式驱动的学习？- 知乎</link></bibliosource>
+  <author>zhihu.com</author>
+</bibliomixed>
+
+<bibliomixed id="ref.zhidao_soft_engineering_question">
+  <bibliosource><link xl:href="http://zhidao.baidu.com/question/559495337288649284.html">关于软件工程和嵌入式的一些问题，嵌入式及软件的前辈请进_百度知道</link></bibliosource>
+  <author>baidu</author>
+</bibliomixed>
+
+<bibliomixed id="ref.android_framework_figure_explain">
+  <bibliosource><link xl:href="http://blog.csdn.net/kaixinbingju/article/details/8835744">android framework 图解 - kaixinbingju的专栏 - 博客频道 - CSDN.NET</link></bibliosource>
+  <author>csdn</author>
+</bibliomixed>
+
+<bibliomixed id="ref.mipi_vip_res">
+  <bibliosource><link xl:href="http://ip.cadence.com/knowledgecenter/know-vip/vip-resource-pages/mipi-vip-resources">MIPI VIP Resources | Cadence IP</link></bibliosource>
+  <author>cadence</author>
+</bibliomixed>
+
+<bibliomixed id="ref.2013_2014_sixth_china_emb_dev_overview_report">
+  <bibliosource><link xl:href="http://download.farsight.com.cn/download/pdf/EmbeddedReport2013-2014.pdf">2013-2014 年（第六届） 中国嵌入式开发从业人员调查报告</link></bibliosource>
+  <author>farsight.com</author>
+</bibliomixed>
+
+<bibliomixed id="ref.csdn_hw_domain_tech_sys">
+  <bibliosource><link xl:href="http://bbs.csdn.net/topics/390487802">硬件行业知识体系概要-CSDN论坛-CSDN.NET</link></bibliosource>
+  <author>Alex_rcpilot</author>
+</bibliomixed>
+
+<bibliomixed id="ref.liepin_senior_embedded_software_engineer">
+  <bibliosource><link xl:href="http://a.liepin.com/4442902/job_6186910.shtml?sfrom=recom-PC_JD-supply_14">Senior Embedded Software Engineer招聘_Senior Embedded Software Engineer招聘信息-猎聘网</link></bibliosource>
+  <author>liepin</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_bkg">
+  <bibliosource><link xl:href="http://www.crifan.com/embedded_development_background/">嵌入式开发之嵌入式背景知识</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_basic_concept_and_logic">
+  <bibliosource><link xl:href="http://www.crifan.com/embedded_development_basic_concept_develop_logic/">嵌入式开发之基本概念和开发逻辑</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_board_data_mining_concept">
+  <bibliosource><link xl:href="http://www.crifan.com/qanda_embedded_data_acqusition_system_implement_process/">【问题解答】用一个嵌入式开发板去实现数据采集的基本思路和逻辑</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_glossary_concept">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_embedded_concept_name_explanation/">【整理】嵌入式领域的名词概念解释</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_dev_note_summary">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_embedded_development_experience_and_note/">【整理】嵌入式开发经验和心得总结</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.tq_am335x_7_inch_lcd_board">
+  <bibliosource><link xl:href="http://www.embedsky.com/index.php?s=/Product/show/id/49.html">广州天嵌科技 - TQ_AM335x+7寸电容屏 -产品详细</link></bibliosource>
+  <author>embedsky</author>
+</bibliomixed>
+
+<bibliomixed id="ref.baike_am335x_board">
+  <bibliosource><link xl:href="http://baike.baidu.com/view/10170430.htm">AM335X开发板_百度百科</link></bibliosource>
+  <author>baike</author>
+</bibliomixed>
+
+<bibliomixed id="ref.similar_explain_emb_dev_need_which_knowledge">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_use_similar_building_field_explain_embedded_system_need_learn_which_kind_of_knowledge/">【整理】类比解释：嵌入式开发需要掌握哪些知识</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_technology_arch_summary">
+  <bibliosource><link xl:href="http://www.crifan.com/embedded_system_software_field_knowledge_overview/">【整理】嵌入式软件知识体系概述</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+<bibliomixed id="ref.emb_names_concept">
+  <bibliosource><link xl:href="http://www.crifan.com/summary_embedded_concept_name_explanation/">【整理】嵌入式领域中常见的名词和概念的解释 | 在路上</link></bibliosource>
+  <author>Crifan Li</author>
+</bibliomixed>
+
+</bibliography>

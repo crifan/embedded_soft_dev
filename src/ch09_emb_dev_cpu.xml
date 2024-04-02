@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch09_emb_dev_cpu">
+<title>嵌入式开发之嵌入式CPU</title>
+<abstract></abstract>
+
+<sect1 xml:id="what_is_emb_cpu"><title>什么是嵌入式CPU</title>
+    <para><link xl:href="http://www.crifan.com/summary_embedded_cpu_dsp_mcu_soc_relation_comparation/">【整理】嵌入式CPU，MCU，SoC，DSP之间的区别和联系 | 在路上</link></para>
+    <para><link xl:href="http://www.crifan.com/explain_soc_by_analogy_car/">【整理】用汽车去类比详解嵌入式的SoC | 在路上</link></para>
+    <para><link xl:href="http://www.crifan.com/embedded_common_used_soc_mcu_ip_core_company_brand/">【整理】常见的嵌入式CPU，MCU，SoC，CPU Core的公司，品牌，厂家 | 在路上</link></para>
+    <para><link xl:href="http://www.crifan.com/order_embedded_software_and_hardware_overview_v2011-10-13/">【整理】嵌入式软硬件概览 v2011-10-13 | 在路上</link></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_cpu_core_para"><title>嵌入式CPU核心参数</title>
+    <para>嵌入式CPU/SoC/MCU/DSP等核心参数：主要还是性能：MHz，存储：RAM，外设多少等等</para>
+    <para>比如，除了之前<link xl:href="http://www.crifan.com/summary_embedded_development_experience_and_note/">【整理】嵌入式开发经验和心得总结</link></para>
+    <para>中提到的PIC32的那个图，现在还有个：</para>
+    <para><link xl:href="http://www.analog.com/zh/processors-dsp/sharc/products/selection-tables/sharc_Selection_Table/resources/fca.html" /></para>
+    <para>的产品型号参数表，也可以提现出这点，主要参数还是性能：</para>
+    <itemizedlist>
+        <listitem>CPU频率：多少MHz</listitem>
+        <listitem>存储：片上RAM，内存多少</listitem>
+        <listitem>外设：外设的类型和个数</listitem>
+    </itemizedlist>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_cpu_application"><title>嵌入式CPU的应用领域</title>
+    <para>嵌入式的CPU的应用领域，其实和本身嵌入式的领域的划分：<xref linkend="emb_industrial_domain" />是差不多的。</para>
+    <para></para>
+    <para>下面总结一下，不同的嵌入式CPU的主要特点，应用领域：</para>
+    <itemizedlist>
+        <listitem>SHARC处理器
+            <para>TODO：<link xl:href="http://www.analog.com/zh/processors-dsp/sharc/products/index.html">SHARC处理器的应用</link></para>
+            <para>特点：</para>
+            <para>在浮点DSP市场占据主导地位</para>
+            <para>拥有出色的内核和存储器性能</para>
+            <para>以及优异的I/O吞吐能力</para>
+            <para></para>
+            <para>主要应用领域：</para>
+            <itemizedlist>
+                <listitem>音频</listitem>
+                <listitem>安全与监控</listitem>
+                <listitem>汽车电子</listitem>
+                <listitem>测试测量与控制</listitem>
+                <listitem>过程控制</listitem>
+            </itemizedlist>
+        </listitem>
+        <listitem>ARM
+            <para>ARM本身应用极其广泛。此处只总结部分的典型应用。</para>
+            <para>TODO：<link xl:href="http://www.arm.com/zh/products/processors/classic/arm9/arm946.php">ARM内核的应用</link></para>
+            <para>ARM946E-S 处理器可用于众多先进的数字产品：</para>
+            <itemizedlist>
+                <listitem>消费品：智能手机、PDA、机顶盒、PMP、电子玩具、数码相机、数码摄像机等</listitem>
+                <listitem>联网：无线局域网、802.11、蓝牙、Firewire、SCSI、2.5G/3G基带等</listitem>
+                <listitem>汽车：电力火车、ABS、车身系统、导航、信息娱乐等</listitem>
+                <listitem>嵌入式：USB 控制器、蓝牙控制器、医用扫描仪等</listitem>
+                <listitem>存储：硬盘控制器、固态驱动器等</listitem>
+            </itemizedlist>
+            <para>ARM还有Corte系列的内核, 比如常用的Cortex M3/M4</para>
+            <para></para>
+        </listitem>
+        <listitem>Renesas
+            <para>Renesas的芯片在汽车电子领域中应用较广</para>
+            <para>比如某汽车内部用到的芯片就有Renesas V850/K0R</para>
+        </listitem>
+        <listitem>Freescale
+            <para>Freescale的芯片在汽车电子领域中应用较广</para>
+            <para></para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>

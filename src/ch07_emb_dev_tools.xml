@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch07_emb_dev_tools">
+<title>嵌入式开发之开发工具</title>
+<abstract></abstract>
+
+<sect1 xml:id="emb_dev_ide"><title>嵌入式开发的IDE</title>
+    <para>TODO：</para>
+    <para><link xl:href="http://www.crifan.com/summary_common_embedded_ide/">【整理】各种常见的嵌入式IDE</link></para>
+    <para><link xl:href="http://www.crifan.com/intro_embedded_ide_renesas_hew_high_performance_embedded_workshop/">【整理】嵌入式IDE：Renesas的HEW(High-performance Embedded Workshop)</link></para>
+    <para><link xl:href="http://www.crifan.com/embedded_ide_iar_embedded_workbench_intro/">【整理】嵌入式IDE：IAR Embedded Workbench IDE简介</link></para>
+
+    <para>嵌入式开发领域内也有很多常见的，相对通用的IDE：</para>
+    <para><link xl:href="http://www.crifan.com/summary_common_embedded_ide/">【整理】各种常见的嵌入式IDE | 在路上</link></para>
+
+    <sect2 xml:id="emb_env_ide_keil"><title>嵌入式IDE：Keil</title>
+        <para></para>
+        <para></para>
+        <para></para>
+    </sect2>
+
+    <sect2 xml:id="emb_env_ide_arm_related"><title>嵌入式IDE：ARM相关的ADS，RVDS等</title>
+        <para>ARM自家有一些常见的工具，之前叫做ADS，后来升级到RVDS，后来还收购了Keil的RealView MDK</para>
+        <para>ADS最常用的版本就是ADS 1.2</para>
+        <para></para>
+        <para></para>
+    </sect2>
+
+    <sect2 xml:id="emb_env_ide_iar"><title>嵌入式IDE：IAR</title>
+        <para><link xl:href="http://www.crifan.com/embedded_ide_iar_embedded_workbench_intro/">【整理】嵌入式IDE：IAR Embedded Workbench IDE简介 | 在路上</link></para>
+        <para></para>
+        <para></para>
+        <para></para>
+    </sect2>
+
+</sect1>
+
+<sect1 xml:id="protocol_analysis_tool"><title>协议分析工具</title>
+    <para>协议分析工具很方便很强大 -&gt; 有机会还是多多利用协议分析工具 -&gt; 提高工作效率</para>
+    <para>比如之前的，就见过USB协议分析工具，即<link xl:href="http://www.crifan.com/files/doc/docbook/usb_basic/release/html/usb_basic.html">USB基础知识概论</link>中<link xl:href="http://www.crifan.com/files/doc/docbook/usb_basic/release/html/usb_basic.html#usb_analysis_tool">其他一些USB测试和协议分析等软件</link>提到的： </para>
+    <para>“Ellisys的USB Explorer 260硬件，加上对应的USB软件Ellisys USB Analysis Software，实现USB数据抓包和分析”和：“Catalyst Enterprises公司的硬件，加上对应的软件SBAE USB，实现USB数据捕获和分析” </para>
+    <para>SBAE的效果可参见： <link xl:href="http://www.crifan.com/files/doc/docbook/usb_basic/release/html/usb_basic.html#usb_emulation_example">举例详解USB的枚举过程</link></para>
+    <para>现在又在： <link xl:href="http://www.zlgmcu.com/tools/LogicAnalyser/LA1032/LA1032-SD.pdf" />中看到有个原始数据：</para>
+    <figure xml:id="fg.sd_signal_orgin"><title>SD原始时序图</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/sd_signal_orgin.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/sd_signal_orgin.png" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <para>用（SD）协议分析工具分析后的结果： </para>
+    <figure xml:id="fg.after_tool_analysis_sd_signal_meaning"><title>结果解码后的SD时序效果图</title>
+        <mediaobject>
+            <imageobject role="html"><imagedata fileref="images/after_tool_analysis_sd_signal_meaning.png" align="left"   scalefit="0" width="100%" /></imageobject>
+            <imageobject role="fo">  <imagedata fileref="images/after_tool_analysis_sd_signal_meaning.png" align="center" scalefit="1" width="100%"/></imageobject>
+        </mediaobject>
+    </figure>
+    <para>很明显： </para>
+    <para>在SD协议中对应的物理的信号所表示的含义，不用你很笨的手动一点点的去分析了，因为人家的分析工具直接帮你分析好了。相对来说，算是极大的提高了工作效率。 </para>
+    <para>所以，有机会，有条件（毕竟有些协议没有这么好的分析工具，或者即使有未必是免费，未必你能得到该工具）的话，还是好好利用工具，提高做事情的效率。</para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="crosstool_chain"><title>交叉编译器/工具链</title>
+    <para>市面上有很多不同公司提供的，各种类型的编译器和其他相关开发工具。</para>
+    <para>比如<link xl:href="http://www.raisonance.com/">raisonance</link>提供的：C编译器，编程工具，调试工具，评估板，支持来自不同厂商，包括NXP，STMicroelectrics，TI，Silicon Laboratories等，基于ARM，8051，STM8，ST7，PowerPC，CoolRISC为微处理器内核的快速开发。</para>
+    <para></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_debug_tool"><title>嵌入式开发的调试工具</title>
+    <para>嵌入式调试工具<link xl:href="http://www.timll.com/chinese/product/TDS560.asp">TDS560 Plus仿真器</link>，<link xl:href="http://www.armkits.com/product/tds560.asp" />，用于调试TI的DSP（也支持ARM）的开发。</para>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>

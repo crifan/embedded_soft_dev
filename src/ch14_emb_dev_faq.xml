@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch15_emb_dev_faq">
+<title>嵌入式软件开发常见问题与解答</title>
+<abstract></abstract>
+
+<para>嵌入式软件开发领域内，有很多常见的疑问。此处试图解答清楚这类疑问。</para>
+<para></para>
+<qandaset>
+    <qandaentry xml:id="qa.emb_c_learn_to_which_level">
+        <question>
+            <para>学习嵌入式C语言要掌握到什么程度？</para>
+            <para>比如要求C语言能编多少行的程序，还是看懂多么复杂的程序，还是只要会修改就行。</para>
+        </question>
+        <answer>
+            <para>主要是针对：<link xl:href="http://www.zhihu.com/question/29590155/answer/44887185">学习嵌入式C语言要掌握到什么程度？ - 知乎</link>的回答。</para>
+            <para></para>
+            <para>其实嵌入式，尤其是嵌入式底层驱动开发，对于写代码的多少和价值，用一句经典话的话来描述就是：</para>
+            <para>如果写一个嵌入式驱动，一共100行，</para>
+            <para>写出来那100行代码，本身可能只值1块钱</para>
+            <para>而搞懂如何写，值99元</para>
+            <para>-&gt;</para>
+            <para>嵌入式，尤其是底层驱动开发，其实代码量相对（尤其是上层软件）都不是很大，但是要搞懂背后的逻辑，协议，接口，框架，平台等内容，然后才能写出来代码。</para>
+            <para>而搞懂背后的逻辑，往往才是难点和重点。</para>
+            <para>-&gt;</para>
+            <para>所以，往往也不能简单说就是，需要你看懂多么多么复杂的逻辑的程序的代码，而是：</para>
+            <para>看似代码量不多，但是寥寥几行代码背后，所涉及到的软件和硬件的知识，系统方面的知识，框架方面的知识，才是对你来说，最复杂的。</para>
+            <para>-&gt;</para>
+            <para>当然，如果搞懂了应该如何写，往往也就会修改对应的代码了。</para>
+            <para></para>
+            <para>总的来说：</para>
+            <para>嵌入式开发，需要的背景知识：</para>
+            <itemizedlist>
+                <listitem>行业背景知识</listitem>
+                <listitem>操作系统，平台</listitem>
+                <listitem>平台下的（驱动）框架</listitem>
+                <listitem>（驱动的）具体实现细节</listitem>
+                <listitem>看懂设备本身的手册搞懂如何配置操作</listitem>
+            </itemizedlist>
+            <para>等等，很多很杂的内容。而在这些都搞懂的前提下，对于C语言本身的语言方面的要求，其实相对来说并不高：只需要有一定的编码经验，懂C语言语法，即可去写代码，修改代码。</para>
+            <para>简言之：</para>
+            <itemizedlist>
+                <listitem>搞懂如何写：大概占70%的技术比重</listitem>
+                <listitem>而具体写出来（高质量的）C语言代码：可能只占30%左右的技术比重</listitem>
+            </itemizedlist>
+            <para>而关于嵌入式的，行业背景知识，系统平台和框架，驱动框架等等方面的东西：</para>
+            <orderedlist>
+                <listitem>先看：<link xl:href="http://www.crifan.com/files/doc/docbook/embedded_soft_dev/release/html/embedded_soft_dev.html">嵌入式软件开发</link>搞懂嵌入式软件。</listitem>
+                <listitem>嵌入式领域内的，各种驱动共性的东西：<link xl:href="http://www.crifan.com/files/doc/docbook/embedded_drv_dev/release/html/embedded_drv_dev.html">嵌入式驱动开发</link></listitem>
+                <listitem>单独针对Linux系统下面的软件开发：<link xl:href="http://www.crifan.com/files/doc/docbook/embedded_linux_dev/release/html/embedded_linux_dev.html">嵌入式Linux软件开发</link></listitem>
+                <listitem>针对Linux下面的，驱动方面的开发：<link xl:href="http://www.crifan.com/files/doc/docbook/embedded_linux_drv_dev/release/html/embedded_linux_drv_dev.html">嵌入式Linux驱动开发</link></listitem>
+            </orderedlist>
+            <para></para>
+        </answer>
+    </qandaentry>
+</qandaset>
+
+</chapter>

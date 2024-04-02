@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch04_emb_dev_composition">
+<title>嵌入式开发环境的基本构成</title>
+<abstract></abstract>
+
+<para></para>
+<para>嵌入式开发，有很多主流的操作系统，对应着各自不同的开发环境。</para>
+<para>常见的有：</para>
+<itemizedlist>
+    <listitem>嵌入式Linux</listitem>
+    <listitem>WinCE</listitem>
+</itemizedlist>
+<para>下面分别来解释：</para>
+
+<sect1 xml:id="emb_linux_compostion"><title>嵌入式Linux开发环境组成</title>
+    <para>先要搞懂嵌入式Linux开发的常见的，典型的环境的基本组成：uboot+kernel+rootfs</para>
+    <itemizedlist>
+        <listitem>bootloader是啥
+            <para>为何要bootloader</para>
+        </listitem>
+        <listitem>什么是kernel</listitem>
+        <listitem>rootfs
+            <para>为何非要有个rootfs。</para>
+        </listitem>
+        <listitem>以及，常见的，典型的，嵌入式开发流程是什么样的
+            <para>为何非要这么开发，换个方式行不行，有没有更好的方式。</para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+
+    <itemizedlist>
+        <listitem>主机Host</listitem>
+        <listitem>一套交叉工具链，也叫交叉编译器 
+            <para>大了说，是一套编译开发环境</para>
+        </listitem>
+        <listitem>uboot</listitem>
+        <listitem>kernel</listitem>
+        <listitem>rootfs</listitem>
+        <listitem>烧录工具</listitem>
+        <listitem>开发板</listitem>
+    </itemizedlist>
+    <para>抽空再按照，硬件有哪些，软件需要哪些去划分，可能更容易理解。</para>
+    <para>关于嵌入式Linux开发环境的解释，详见：</para>
+    <para><link xl:href="http://www.crifan.com/files/doc/docbook/embedded_linux_dev/release/html/embedded_linux_dev.html">嵌入式Linux软件开发</link></para>
+</sect1>
+
+<sect1 xml:id="emb_wince_compostion"><title>WinCE开发环境组成</title>
+    <para></para>
+</sect1>
+
+</chapter>

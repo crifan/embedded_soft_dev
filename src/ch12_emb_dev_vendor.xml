@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch13_emb_dev_vendor">
+<title>嵌入式软件开发相关的厂商</title>
+<abstract></abstract>
+
+<para>嵌入式软件方面的开发期间，会遇到各种不同的软件的、硬件的、开发板的等等方面的厂商、公司。</para>
+<para>对此需要有一定了解，以便于熟悉本行业的情况，便于后续开发。</para>
+<para>下面来总结一下常见的各方面的公司、厂商：</para>
+<para></para>
+
+<sect1 xml:id="emb_vendor_soft"><title>嵌入式软件厂商</title>
+    <para></para>
+    <para></para>
+    <para></para>
+
+    <sect2 xml:id="emb_soft_vendor_keil"><title>嵌入式软件厂商：Keil</title>
+        <para><link xl:href="http://www.keil.com/" /></para>
+        <para>中的介绍，支持很多类似的CPU：</para>
+        <itemizedlist>
+            <listitem><link xl:href="http://www.keil.com/arm/">MDK-ARM Microcontroller Development</link></listitem>
+            <listitem><link xl:href="http://www.keil.com/c51/">8051 Development Tools</link></listitem>
+            <listitem><link xl:href="http://www.keil.com/c166/">C166 Development Tools</link></listitem>
+            <listitem><link xl:href="http://www.keil.com/ds5">DS-5 Development Studio</link></listitem>
+        </itemizedlist>
+        <para>另外，注意到，Keil也支持AMS的芯片：</para>
+        <para><link xl:href="http://www.keil.com/dd/" />中的：<link xl:href="http://www.keil.com/dd/chip/4389.htm">AustriaMicroSystems AS3525</link>和：<link xl:href="http://www.keil.com/dd/chips/austriamicrosystems/arm.htm">List of ARM7/ARM9/Cortex Devices Available from AustriaMicroSystems</link></para>
+        <para></para>
+        <para>需要提醒的是：Keil后来被ARM买了，现在属于ARM旗下的品牌了。</para>
+    </sect2>
+</sect1>
+
+<sect1 xml:id="emb_vendor_hardware"><title>嵌入式硬件厂商</title>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    <para></para>
+    
+
+    <sect2 xml:id="emb_hw_vendor_board"><title>嵌入式硬件开发板厂商</title>
+        <para>嵌入式软件开发期间，常会遇到很多嵌入式开发板。</para>
+        <para>下面就来整理一些嵌入式开发板：</para>
+        <itemizedlist>
+            <listitem>天嵌科技
+                <para>之前用过ARM9的TQ2440的开发板，觉得还不错，资料算很齐全。</para>
+                <para>各种软硬件支持的也不错。</para>
+                <para></para>
+                <para></para>
+            </listitem>
+            <listitem>安赛卓尔电子科技的AM335X开发板EZ335X-EVB
+                <para>看到一个觉得算特别的点：</para>
+                <para>双MAC的MCU：唯一一个集成2个MAC的MCU</para>
+                <para>其他还有其他特点：</para>
+                <para>支持多种操作系统</para>
+                <para>已在多个领域内应用</para>
+                <para>可编程实时单元和工业用通信子系统(PRU-ICSS)从ARM内核分离，从而实现了针对更大效率和灵活性的独立运行和时钟控制。</para>
+                <para>PRU-ICSS支持附加外设接口和诸如EtherCAT，PROFINET，EtherNet/IP，PROFIBUS，以太网POWERLINK，串行实时通信协议(Sercos)的实时协议和其它协议。</para>
+                <para></para>
+            </listitem>
+        </itemizedlist>
+        <para></para>
+        <para></para>
+        <para></para>
+    </sect2>
+
+</sect1>
+
+
+</chapter>

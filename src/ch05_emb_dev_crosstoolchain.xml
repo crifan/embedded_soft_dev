@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch05_emb_dev_crosstoolchain">
+<title>嵌入式开发之交叉编译和交叉编译器</title>
+<abstract></abstract>
+
+<sect1 xml:id="what_is_crosscompile"><title>什么是交叉编译</title>
+    <para>详见：</para>
+    <para><link xl:href="http://www.crifan.com/files/doc/docbook/cross_compile/release/html/cross_compile.html#crosscompile">交叉编译简介</link></para>
+    <para></para>
+</sect1>
+    
+<sect1 xml:id="how_get_crosscompiler"><title>如何获得交叉编译器</title>
+    <para>详见：</para>
+    <para><link xl:href="http://www.crifan.com/files/doc/docbook/cross_compile/release/html/cross_compile.html#how_to_get_crosscompiler">如何得到交叉编译器</link></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="how_use_crosstoolchain"><title>如何使用交叉编译器</title>
+    <para>简单说就是：直接把交叉工具链所在的路径，放到环境变量PATH中，使得可以在命令行环境中正常调用即可</para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_compile_knowledge"><title>嵌入式编译相关知识</title>
+    <para>嵌入式编译，除了会涉及编译原理本身的东西之外，还会很多不同体系架构方面特定的内容。</para>
+    <para>比如，ARM的scatter file的概念。</para>
+    <para>TODO：详见：<link xl:href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0474c/CHDDDBGE.html" /></para>
+    <para></para>
+</sect1>
+
+</chapter>

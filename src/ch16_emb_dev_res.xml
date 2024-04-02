@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch17_emb_dev_res">
+<title>嵌入式软件开发相关资源</title>
+<abstract></abstract>
+
+<sect1 xml:id="emb_dev_books"><title>嵌入式软件开发书籍</title>
+    <para>关于嵌入式软件开发，有一些还不错的值得推荐的书：</para>
+    <sect2 xml:id="emb_sys_arch_comprehensive_guide"><title>Embedded Systems Architecture: A Comprehensive Guide for Engineers and Programmers</title>
+        <para>这本书，以一个实际的嵌入式系统开发的例子去解释了，嵌入式开发期间到底会涉及到哪些知识，具体的系统架构是什么样的，嵌入式硬件和软件分别有哪些内容等等。</para>
+        <para>从整体嵌入式框架，到嵌入式的Host端和嵌入式开发板端，感觉就是无所不包。</para>
+        <para>所以可以说，该书最大的特点，算是内容非常翔实。</para>
+        <para>比如，在“3.7 Putting It All Together: The Integrated Circuit (IC)”中，把嵌入式中涉及到的电阻，电容，封装形式等等，都简单解释了基本概念。这类知识的介绍，对于嵌入式入门和开发，很有帮助。</para>
+        <para>如此，等你看完了该书，就能真正的对于真实的嵌入式系统，有了很好的概念了。</para>
+        <para>网上找到的免费的PDF版本的下载地址：<link xl:href="http://www.csit-sun.pub.ro/~cpop/Documentatie_SM/Sisteme_incorporate/Embedded%20Systems%20Architecture%20-%20A%20Comprehensive%20Guide%20for%20Engineers%20and%20Programmers.pdf">[PDF] Embedded Systems Architecture A Comprehensive Guide for Engineers and Programmers</link></para>
+        <para>亚马逊也有卖的：<link xl:href="http://www.amazon.com/Embedded-Systems-Architecture-Second-Edition/dp/0123821967">[Amazon] Embedded Systems Architecture A Comprehensive Guide for Engineers and Programmers</link></para>
+	</sect2>
+</sect1>
+
+</chapter>

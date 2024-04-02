@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE preface>
+
+<preface
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="preface">
+<title>正文之前</title>
+
+<section xml:id="purpose"><title>此文目的</title>
+    <para>此文主要介绍的嵌入式软件开发的基本概念和组成，以及大概包含哪些东西，如何开发的基本流程等等内容，目的是为了搞懂如何入手嵌入式软件开发。</para>
+</section>
+
+<section xml:id="contact"><title>联系方式</title>
+    <para>有任何意见、建议，都欢迎<link xl:href="http://www.crifan.com/about/me/">联系我Crifan</link></para>
+</section>
+
+</preface>

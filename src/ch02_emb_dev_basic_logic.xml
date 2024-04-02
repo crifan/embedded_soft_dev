@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch02_emb_dev_basic_logic">
+<title>嵌入式软件开发的基本逻辑</title>
+<abstract></abstract>
+
+<sect1 xml:id="emb_basic_concept"><title>嵌入式软件开发的基本逻辑</title>
+    <para>包括嵌入式软件开发的知识体系和背景：</para>
+    <para>先说背景：</para>
+    <para>计算机，领域内，知识体系，按层次分，可以分为：</para>
+    <itemizedlist>
+        <listitem>上层：纯软件</listitem>
+        <listitem>中间：嵌入式</listitem>
+        <listitem>底层：硬件</listitem>
+    </itemizedlist>
+    <para>其中：</para>
+    <itemizedlist>
+        <listitem>纯软件：无需实际接触硬件，写代码，也不会涉及到操作硬件
+            <para>-&gt;当然你对硬件的工作方式，工作机制，特点等内容有了解，自然更容易设计出，写出高质量的软件代码</para>
+        </listitem>
+        <listitem>嵌入式：全称算是嵌入式软件
+            <para>注意：对应的，很多时候，也有把嵌入式硬件，简称为嵌入式的。</para>
+        </listitem>
+        <listitem>嵌入式软件方面，更多的时候，写的代码，都是和硬件打交道的。</listitem>
+    </itemizedlist>
+    <para>此处，暂且不讨论上层的纯软件，以及底层的硬件，只是简要概述一下，中间的嵌入式，尤其是嵌入式软件部分的知识体系，基本架构：</para>
+
+    <sect2 xml:id="emb_has_os_or_not"><title>按照是否有操作系统</title>
+        <para>按照是否有操作系统，可分为：</para>
+        <itemizedlist>
+            <listitem>无OS的嵌入式系统
+                <para>其中，无OS的，相对比较简单：一个大循环，</para>
+                <para>http://www.segger.com/admin/uploads/productDocs/UM01001_embOS_Generic.pdf</para>
+                <para>提到的那个Super Loop</para>
+            </listitem>
+            <listitem>有OS的嵌入式系统
+                <para>有OS的，往往架构都和OS有关：</para>
+                <itemizedlist>
+                    <listitem>应用程序
+                        <itemizedlist>
+                            <listitem>应用程序</listitem>
+                            <listitem>库函数</listitem>
+                        </itemizedlist>
+                    </listitem>
+                    <listitem>操作系统内核
+                        <itemizedlist>
+                            <listitem>各个功能模块：网络，文件系统，进程通信，进程管理，存储管理</listitem>
+                            <listitem>硬件抽象层HAL</listitem>
+                        </itemizedlist>
+                    </listitem>
+                    <listitem>硬件</listitem>
+                </itemizedlist>
+                <para>典型的嵌入式Linux软件系统，根据不同的阶段和模块分，又可以分为：</para>
+                <itemizedlist>
+                    <listitem>Bootloader：最常见的就是Uboot了</listitem>
+                    <listitem>Rootfs：根文件系统</listitem>
+                    <listitem>Kernel：嵌入式Linux内核</listitem>
+                </itemizedlist>
+                <para>更多详细的解释，请参见：<link xl:href="http://www.crifan.com/files/doc/docbook/embedded_linux_dev/release/html/embedded_linux_dev.html">嵌入式Linux软件开发详解</link></para>
+            </listitem>
+        </itemizedlist>
+    </sect2>
+    
+    <sect2 xml:id="emb_os_private_or_not"><title>按照操作系统是否是私有的</title>
+        <para>其中有OS的，按照是否是开源的，是否是常用的，通用的，还是私有分，可以分为：</para>
+        <itemizedlist>
+            <listitem>开源的/常见的/通用的 嵌入式操作系统
+                <para>开源的/常见的/通用的 ，并不是等价的，但是只是此处相对于私有的来说，从概念上和逻辑上，是等价的。</para>
+                <para>常见的有：嵌入式Linux（及其衍生物Android），QNX，VxWorks，ucOS/II，TRON（ITRON），WinCE等等。</para>
+            </listitem>
+            <listitem>私有的嵌入式操作系统</listitem>
+        </itemizedlist>
+        <para></para>
+    </sect2>
+
+    <para>什么叫做，写的代码，是和硬件打交道的？</para>
+    <para>意思是：对于物理上，真实存在的硬件设备，写代码，操作对应的硬件设备，往往是写硬件的驱动程序之类的</para>
+    <para></para>
+    <para>什么叫做，写代码操作硬件设备？</para>
+    <para>本质上就是：写代码，设置，配置硬件</para>
+    <para>往往都是：读写硬件设备的寄存器，从而达到使得硬件可以工作，可以正常工作的目的。</para>
+    <para></para>
+    <para>什么叫做用代码驱动硬件工作，即什么叫做硬件设备驱动？</para>
+    <para>背景：</para>
+    <para>硬件有各种功能，特性；</para>
+    <para>目的：</para>
+    <para>希望硬件按照我们所希望的方式，去工作；</para>
+    <para>需要做的事情：</para>
+    <para>大体分两步：</para>
+    <orderedlist>
+        <listitem>初始化硬件</listitem>
+        <listitem>实现硬件数据的读写</listitem>
+    </orderedlist>
+    <para>举例：</para>
+    <para>一个典型的，在嵌入式Linux系统中，实现对应的SD卡的</para>
+    <para>背后的逻辑</para>
+    <para>我们的目标</para>
+    <para>以及具体如何去写SD卡驱动的大概步骤和逻辑就是：</para>
+    <para>SD卡，插入到开发板的SD卡插槽上，然后开发板中正在运行的嵌入式Linux系统，可以识别出该SD卡，并且可以实现SD的数据的读写：</para>
+    <itemizedlist>
+        <listitem>读：把里面的数据拷贝出来，比如里面有张图片，可以把图片这个文件的数据拷贝出来</listitem>
+        <listitem>写：往里面写数据，比如想要拷贝一首歌曲到SD中</listitem>
+    </itemizedlist>
+    <para>那么，我们就需要：</para>
+    <para>在嵌入式Linux系统中，为SD卡写驱动</para>
+    <para>其大概的逻辑和步骤是：</para>
+    <orderedlist>
+        <listitem>SD的初始化部分
+            <para>去设置对应的SD卡的寄存器，申请各种相关的软硬件资源（此部分相关细节很多，待以后详解）</para>
+            <para>即把SD卡配置成你需要的工作模式了，然后再去实现后续的数据读写。</para>
+        </listitem>
+        <listitem>让SD卡工作的部分：实现数据的读写
+            <para>然后再去（Linux的相关的驱动框架下）写相关的SD的数据的读写的功能</para>
+            <para>操作对应的寄存器</para>
+            <para>把数据从SD的相关的数据寄存器中读出来</para>
+            <para>或者是</para>
+            <para>把要写入的数据，写入到SD的相关的数据寄存器中</para>
+            <para>其他相关的内容还有：为了提高数据读写速度，可以去利用DMA，如果有DMA可用的话</para>
+        </listitem>
+    </orderedlist>
+</sect1>
+
+<sect1 xml:id="emb_soft_dev_type"><title>嵌入式软件开发内容分类</title>
+    <para>根据开发内容的所属架构层次分，至少可以分为：</para>
+    <itemizedlist>
+        <listitem>嵌入式驱动开发
+            <para>比如在Linux系统中，开发各种设备驱动。</para>
+        </listitem>
+        <listitem>嵌入式应用开发
+            <para>比如在Linux系统上面写各种应用。典型的例子是，在拿到了某芯片的原厂的SDK，比如已实现了各种驱动的嵌入式Linux，基于此，去写Linux的应用。</para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_dev_related_things"><title>嵌入式软件期间会涉及哪些内容</title>
+    <para>对于嵌入式领域中会听到，见到的，涉及到如此众多的领域，技术，芯片，公司，开发工具，软件平台等等名称，很多人在开始接触的时候，都会很晕。</para>
+    <para>而这里，尝试用初学者所能听得懂的方式去解释一些常见的名词，所处的地位和作用</para>
+    <para>-&gt;由此也验证了那句：搞嵌入式开发，尤其是底层开发，相对来说，难度还是要比上层软件要难的</para>
+    <para>接下来，我熟悉的嵌入式Linux中Nand Flash驱动开发为例来解释说明具体过程和所涉及到的内容：</para>
+    <para>假如你是个普通的嵌入式驱动软件开发者，你的老板给你安排一个嵌入式Linux中Nand Flash驱动开发的任务的时候，就会直接或间接接触到很多东西：</para>
+    <table xml:id="tbl.emb_linux_drv_dev_related"><title>嵌入式Linux驱动开发期间相关的内容</title>
+        <tgroup cols="3">
+            <colspec colnum="1" colname="col1" colwidth="3*" />
+            <colspec colnum="2" colname="col2" colwidth="3*" />
+            <colspec colnum="3" colname="col3" colwidth="1*" />
+            
+            <thead>
+                <row><entry>嵌入式Linux中Nand Flash驱动开发期间直接涉及到的</entry><entry>嵌入式Linux中Nand Flash驱动开发期间间接相关的，类似的，类比的</entry><entry>备注</entry></row>
+            </thead>
+            
+            <tbody>
+                <row><entry>首先，此处所从事的开发领域，是一个消费类数码产品，比如电子书</entry><entry><para>于此对应的，同级别的，其他开发领域有：<emphasis>工业控制</emphasis>，<emphasis>医疗器械</emphasis>，<emphasis>汽车电子</emphasis>等等行业</para><para>-&gt;其他不同行业内，所要接触到的开发任务，往往又是完全不同的任务</para><para>-&gt;比如工业控制领域所涉及到的<emphasis>现场总线Fieldbus</emphasis>，对于搞消费类数码的人来说，甚至可以说很多名词和概念都没听过。</para><para>-&gt;更别说，让你去折腾<emphasis>HART</emphasis>，<emphasis>FF（Foundation Fieldbus）</emphasis>，<emphasis>Profibus</emphasis>，了，其和消费类数码领域，很多技术都是完全不同和不相关的</para></entry><entry>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/fieldbus_intro/release/html/fieldbus_intro.html">现场总线Fieldbus简析</link></entry></row>
+                <row><entry><para>其次，此处的操作系统用的是嵌入式Linux系统</para><para>-&gt;目前在嵌入式领域内使用可以说是最广泛的</para></entry><entry><para>与此对应的，同级别的，其他的，嵌入式操作系统也有很多，比如：<emphasis>ucOS/II</emphasis>，<emphasis>VxWorks</emphasis>，等等。</para></entry><entry></entry></row>
+                <row><entry><para>而对于Nand Flash，作为其中一种设备，一种接口，与此对应的也有其他很多协议/设备/接口，比如：<emphasis>Nor Flash</emphasis>，<emphasis>Bluetooth</emphasis>，<emphasis>USB</emphasis>，<emphasis>RS232</emphasis>，<emphasis>SD/MMC</emphasis>等等；</para></entry><entry><para>-&gt;换句话说，有可能过些天，你的老板让你去实现<emphasis>Linux</emphasis>中的SD/MMC驱动。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>而接着你就开始去折腾Linux下面的Nand Flash芯片驱动的开发了，然后你可能就会接触到很多很多相关知识了：假如所用的硬件，先是嵌入式开发板，所用<emphasis>SoC</emphasis>芯片是<emphasis>S3C2440</emphasis>，是基于<emphasis>ARM</emphasis>的<emphasis>ARM920T</emphasis>内核的芯片：</para></entry><entry><para></para></entry><entry><para></para></entry></row>
+                <row><entry><para>嵌入式开发板</para></entry><entry><para>-&gt;网上也有很多其他<emphasis>开发板</emphasis>，就是用来卖给你们，用来折腾的，用来搞嵌入式开发的->比如你可以花点钱，买个对应到板子，用于练手，练习各种驱动的或应用的开发；</para></entry><entry><para></para></entry></row>
+                <row><entry><para>SoC</para></entry><entry><para>->&gt;此处的嵌入式CPU，很多时候，用的是另外一个标准叫法，SoC，而与SoC类似（但不相同的）概念还有<emphasis>MCU</emphasis>，<emphasis>DSP</emphasis>，<emphasis>ASIC</emphasis>，<emphasis>FPGA</emphasis>等等；</para></entry><entry><para></para></entry></row>
+                <row><entry><para>S3C2440</para></entry><entry><para>-&gt;此处是三星的芯片S3C2440，三星自己家的其他基于ARM内核的芯片还有很多，比如<emphasis>S3C2410</emphasis>，<emphasis>S3C6410</emphasis>等等。而与此类似的</para><para>-&gt;类似三星的，也还有其他厂商，可以有能力自己去设计MCU，SoC，比如常见的意法半导体ST Microelectronics的<emphasis>STM32</emphasis>系列的芯片，比如STM32F103VGT6，其是ARM的Cortex-M3内核的，所以全称一般叫做：STM32F103VGT6 ARM Cortex-M3 MCU</para></entry><entry><para></para></entry></row>
+                <row><entry><para>ARM</para></entry><entry><para>-&gt;<emphasis>ARM</emphasis>是一家IP公司，专门设计CPU内核，所谓的IP Core，但不生产。</para><para>-&gt;其他芯片设计公司，比如<emphasis>三星Samsung</emphasis>，<emphasis>飞思卡尔Freescale</emphasis>等等去用ARM的内核设计自己的SoC或MCU。</para><para>-&gt;与此相对的，另外也有一家做IP的公司叫<emphasis>MIPS</emphasis></para></entry><entry><para></para></entry></row>
+                <row><entry><para>ARM920T</para></entry><entry><para>-&gt;类似的内核系列还有<emphasis>ARM922T</emphasis>，<emphasis>ARM926EJS</emphasis>等等，以及后来出来的ARM Cortex系列，<emphasis>Cortex-M3</emphasis>是比较流行的一个系列</para></entry><entry><para></para></entry></row>
+                <row><entry><para></para></entry><entry><para></para></entry><entry><para>现在很多开发板，都是采用比较新的，流行的SoC，而也是基于ARM内核的，比如最新一点的ARM11，ARM Cortex-M3等等；</para></entry></row>
+                <row><entry><para>然后再接着说工作细节中涉及到的Nand Flash芯片方面的知识，此处假设用的Nand Flash芯片是三星的K9GAG08U0M</para></entry><entry><para></para></entry><entry><para></para></entry></row>
+                <row><entry><para>Nand Flash</para></entry><entry><para>-&gt;和Nand Flash对应的Flash技术还有Nor Flash，以及其他更进一步的封装后的<emphasis>LBA Nand Flash</emphasis>，<emphasis>eMMC</emphasis>等等。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>三星的Nand Flash</para></entry><entry><para>-&gt;与此对应的是，其他还有很多Nand Flash芯片厂商，比如<emphasis>Micron</emphasis>镁光，东芝<emphasis>Toshiba</emphasis>，<emphasis>Hynix</emphasis>海力士，闪迪<emphasis>SanDisk</emphasis>等等，<emphasis>Intel</emphasis>英特尔</para></entry><entry><para></para></entry></row>
+                <row><entry><para>K9GAG08U0M</para></entry><entry><para>-&gt;其他还有很多常用的三星的Nand Flash芯片，比如<emphasis>K9LBG08UXD</emphasis>等等。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>然后再说开发所涉及到的软件，包含很多方面，一个个说：交叉编译环境，嵌入式Linux环境构成等等</para></entry><entry><para></para></entry><entry><para></para></entry></row>
+                <row><entry><para>交叉编译环境</para></entry><entry><para>使用交叉编译工具链：已有交叉编译器，配置好环境就可以用来交叉编译了；</para><para>制作交叉工具链：没有交叉编译器，则需要自己去制作交叉编译器，比如用<emphasis>Buildroot</emphasis>，<emphasis>crosstool-ng</emphasis>等等去制作</para></entry><entry><para>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/cross_compile/release/html/cross_compile.html">交叉编译详解</link>，<link xl:href="http://www.crifan.com/files/doc/docbook/crosstool_ng/release/html/crosstool_ng.html">crosstool-ng详解</link></para></entry></row>
+                <row><entry><para>整套的嵌入式Linux环境：uboot+kernel+rootfs</para></entry><entry><para>典型的嵌入式Linux开发环境主要构成就是：<emphasis>uboot+kernel+rootfs</emphasis></para>，<para>-&gt;与嵌入式Linux对应的有，<emphasis>WinCE</emphasis>，其又是不一样的，自己一套的开发环境</para>，<para>-&gt;期间就可能会涉及到，用ARM自己的开发工具去在Windows主机上面交叉编译了，ARM的相关开发工具有<emphasis>ADS</emphasis>，<emphasis>RVDS</emphasis>等等</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Uboot</para></entry><entry><para>叫做bootloader，类似Uboot的还有<emphasis>vivi</emphasis>，<emphasis>Redboot</emphasis>，（WinCE下的）<emphasis>Eboot</emphasis>等等</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Kernel==Linux Kernel</para></entry><entry><para>指的是Linux的内核，类似的，就是完全另外一套的WinCE环境了。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Rootfs</para></entry><entry><para>rootfs内容：各种制作rootfs的工具，手动制作，用工具制作（比如用Buildroot生成的rootfs）rootfs格式：用哪种文件系统，此处假如用yaffs2</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Yaffs2</para></entry><entry><para>类似的，适用于Nand Flash的文件系统还有<emphasis>JFFS2</emphasis>，<emphasis>YAFFS</emphasis>，<emphasis>UBIFS</emphasis></para><para>对应着，还要有制作yaffs2的rootfs的工具：<emphasis>mkyaffs2image</emphasis></para></entry><entry><para></para></entry></row>
+                <row><entry><para>真正开始涉及到嵌入式Linux底层的Nand Flash驱动的开发的话，又会接触到很多技术和框架，名词</para></entry><entry><para></para></entry><entry><para></para></entry></row>
+                <row><entry><para>Linux驱动框架</para></entry><entry><para>不论你是实现哪个设备的驱动，都需要先搞懂本身<emphasis>Linux系统下的驱动框架和模型</emphasis>是什么样的</para><para>-&gt;然后才能搞懂，框架帮你实现了哪些通用的功能，需要自己实现余下的设备相关的功能</para></entry><entry><para></para></entry></row>
+                <row><entry><para>MTD</para></entry><entry><para>Linux中对于Nand Flash等设备所设计的框架，如果写Nand Flash驱动，就是基于该框架下去实现自己芯片的驱动</para><para>-&gt;于此相对的，其他Linux中还有其他很多技术框架，比如针对声卡音频的ALSA等等。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Nand Flash的技术细节：Block，Page，OOB，ECC，Wear Leveling</para></entry><entry><para>真正开始学习和了解Nand Flash驱动的话，会涉及到很多技术细节，比如Nand Flash的内部结构的<emphasis>Block</emphasis>，<emphasis>Page</emphasis>，<emphasis>OOB</emphasis>，数据需要用<emphasis>ECC</emphasis>算法校验保证数据无误（硬件还是软件ECC，ECC算法是<emphasis>BCH</emphasis>的话支持4位还是8位），为了延长使用寿命而去实现<emphasis>负载平衡Wear Leveling</emphasis>，等等需要考虑很多</para></entry><entry><para>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/linux_nand_driver/release/html/linux_nand_driver.html">【详解】如何编写Linux下Nand Flash驱动</link></para></entry></row>
+                <row><entry><para>Linux的使用和操作</para></entry><entry><para>在具体驱动开发期间，不可避免的要涉及到常见的Linux的使用，包括各种命令的用法，Linux系统基本原理和目录结构，都是避不开，要了解的。</para><para>-&gt;比如常见的<command>ls</command>,<command>mkdir</command>,<command>rm</command>,<command>pwd</command>,<command>chmod</command>,<command>chown</command>,<command>ln</command>等等。</para></entry><entry><para></para></entry></row>
+                <row><entry><para>Makefile</para></entry><entry><para>在开发期间，也会遇到用make命令，执行Makefile文件</para><para>-&gt;嵌入式Linux中，往往都是用<emphasis>Makefile</emphasis>去管理项目的</para><para>-&gt;为了了解项目代码的编译过程，也需要学习和了解make的机制</para><para>-&gt;于此对应的，Windows系统下的很多软件，项目，代码的开发，往往都是集成了<emphasis>IDE</emphasis>，可以使很多人避开Makefile</para></entry><entry><para></para></entry></row>
+                <row><entry><para>开发辅助工具：SourceInsight，BeyondCompare，虚拟机VirtualBox，Ubuntu等等</para></entry><entry><para>典型的开放期间，也往往会用到，用于查看Linux内核源码的<emphasis>SourceInsight</emphasis>，用于比较文件差别的<emphasis>Beyond Compare</emphasis>，用于搭建编译环境的虚拟机<emphasis>VirtualBox</emphasis>+<emphasis>Ubuntu</emphasis>，等等等等。</para></entry><entry><para></para></entry></row>
+            </tbody>
+        </tgroup>
+    </table>
+    <para>总结：</para>
+    <itemizedlist>
+        <listitem>搞嵌入式开发，更多的时候，需要先搞懂所涉及的技术所处的层次：
+            <para>哪个行业，哪套硬件和软件平台，哪个软件平台下的什么框架，最终才是某个具体的技术。</para>
+            <para>只有这样，才能知道自己在干嘛，而不是完全一头雾水的埋头写代码。</para>
+        </listitem>
+        <listitem>正因为嵌入式开发涉及到的概念，软件，硬件，平台，比较多，需要的背景知识比较多，所以才会有那个结论
+            <para>-&gt;总体来说，搞嵌入式软件开发，入门比较难</para>
+            <para>-&gt;至少比其他上层纯软件的入门要难不少</para>
+        </listitem>
+    </itemizedlist>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="emb_need_learn_which_knowledge"><title>嵌入式软件开发需要学习哪些知识</title>
+    <para>由于嵌入式本身是个复杂的概念，为了便于理解，此处用类比的手段去好好解释一下，嵌入式开发和从事建筑行业的关系，以便解释清楚，嵌入式学习，需要掌握哪些知识：</para>
+    <para>举个例子：就像，你从事的是建筑行业</para>
+    <para>有些是相对通用的基本知识和技能：（不论你是干体力活的各种工种的工人，还是大楼的整个架构的设计师）进入建筑工地，都要戴安全帽</para>
+    <para>不论你是干哪个工种的，比如瓦工，水电工，木工等等，那基本上都要具备的基本素质都是：</para>
+    <para>身体素质本身要好，要能吃苦</para>
+    <para>但是，很明显，有些知识和技能，就属于领域相关的知识：</para>
+    <itemizedlist>
+        <listitem>瓦工
+            <para>你干瓦工的，要能看懂施工图，要会砌砖，砌各种类型的砖，等等；</para>
+            <para></para>
+        </listitem>
+        <listitem>木工
+            <para>你搞木工，那锯子，刨子，锤子，斧头，那要用的熟，能玩出花样来，才能做出好的柜子，椅子，桌子啥的；</para>
+            <para></para>
+        </listitem>
+    </itemizedlist>
+    <para>如此等等。但如果是你瓦工，则不需要关心木工需要了解的技能，反之亦然。</para>
+    <para>而搞嵌入式，这上面这几点上，有点类似于搞建筑行业：</para>
+	<itemizedlist>
+		<listitem>有些知识，也是属于基本的，相对通用的知识，算是属于嵌入式行业内的基础知识和基本功</listitem>
+		<listitem>有些知识，是属于，具体干哪行，哪个领域，所要涉及到的领域相关知识</listitem>
+	</itemizedlist>
+    <para></para>
+
+    <sect2 xml:id="emb_common_knowledge"><title>嵌入式领域内相对通用的知识和技能</title>
+        <sect3 xml:id="emb_common_lan"><title>嵌入式相对通用的知识：计算机编程语言</title>
+            <para>比如C语言，汇编语言，C++语言等等</para>
+            
+            <sect4 xml:id="common_lan_c"><title>嵌入式相对通用语言：C语言</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_lan_assembly"><title>嵌入式相对通用语言：汇编语言</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_lan_cpp"><title>嵌入式相对通用语言：C++语言</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+        </sect3>
+
+        <sect3 xml:id="emb_common_cpu_arch"><title>嵌入式相对通用的知识：芯片架构</title>
+            <para>硬件采用何种芯片，比如是ARM内核还是MIPS内核</para>
+            <para>是ARM内核的话，具体是哪种内核，比如ARM9TDMI还是Cortex-M3等等</para>
+            <para>不过，关于芯片架构的事情，要好好解释解释：</para>
+            <para>经常看到，嵌入式方面，介绍arm的架构</para>
+            <para>但是却又感觉学了也没啥用，和工作的内容也对不上号，纯粹就是在死读书，读死书</para>
+            <para>至少我最开始的感觉就是这样</para>
+            <para>现在其实也还是没有透彻理解，不过有一点点心得了，总结如下</para>
+            <para>比如以ARM Cortex-M3为例：</para>
+            <figure xml:id="fg.arm_cortex_m3_arch_intro"><title>ARM的Cortex-M3架构概述</title>
+                <mediaobject>
+                    <imageobject role="html"><imagedata fileref="images/arm_cortex_m3_arch_intro.jpg" align="left"   scalefit="0" width="100%" /></imageobject>
+                    <imageobject role="fo">  <imagedata fileref="images/arm_cortex_m3_arch_intro.jpg" align="center" scalefit="1" width="100%"/></imageobject>
+                </mediaobject>
+            </figure>
+            <para>解释我所能够理解的，架构中的内容，和你后续嵌入式Linux开发之间的关系：</para>
+            <itemizedlist>
+                <listitem>ARM架构中的AMBA总线
+                    <para>里面有AHB和APB</para>
+                    <para>对应Linux中就是有对应的AMBA的概念的定义的，好像是在设备注册期间也有涉及到，比如probe的时候</para>
+                </listitem>
+                <listitem>ARM核是否带MMU
+                    <para>决定了是用uclinux还是linux</para>
+                    <para></para>
+                </listitem>
+                <listitem>采用哪款ARM内核
+                    <para>比如说Cortex-M3采用了ARMv7内核</para>
+                    <para>则意味着你选择交叉编译器（甚至是自己<link xl:href="http://www.crifan.com/files/doc/docbook/crosstool_ng/release/html/crosstool_ng.html">用crosstool-ng去制作交叉编译器</link>）的时候内核选择是armv7。</para>
+                    <para></para>
+                    <para></para>
+                </listitem>
+                <listitem>指令集
+                    <para>比如说Cortex-M3是Thumb2的指令集</para>
+                    <para>意味着，比如后期制作或用交叉编译器时，编译代码、生成什么样的汇编指令，都是要设置为thumb2</para>
+                    <para></para>
+                </listitem>
+            </itemizedlist>
+            <para></para>
+            <para>如此，一点点地，把芯片架构是什么，以及不同的值的真正含义是什么，对后续开发有何影响，都说清楚了</para>
+            <para>这样才能说，明白了芯片的架构</para>
+            <para></para>
+        </sect3>
+
+        <sect3 xml:id="emb_common_os"><title>嵌入式相对通用的知识：嵌入式操作系统</title>
+            <para>相对通用的操作系统：嵌入式Linux，ucOS/II，VxWorks等等</para>
+            
+            <sect4 xml:id="common_os_linux"><title>嵌入式常用操作系统：嵌入式Linux</title>
+                <para>此处的嵌入式Linux，是有别于普通桌面电脑所使用的普通桌面Linux系统。</para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_os_ucos_ii"><title>嵌入式常用操作系统：μC/OS-II</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_os_threadx"><title>嵌入式常用操作系统：ThreadX</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_os_vxworks"><title>嵌入式常用操作系统：VxWorks</title>
+                <para>TODO：<link xl:href="http://www.windriver.com/evaluations/gpp-ve/" />可以下载试用包，有空去试试。</para>
+                <para></para>
+            </sect4>
+            
+            <sect4 xml:id="common_os_wince"><title>嵌入式常用操作系统：WinCE</title>
+                <para></para>
+                <para></para>
+                <para></para>
+            </sect4>
+
+            <sect4 xml:id="android_not_common_emb_os"><title>Android不是传统意义上的嵌入式操作系统</title>
+                <para>此处需要专门解释一下，被很多人归类为嵌入式操作系统的Android，实际上不是传统意义上的嵌入式操作系统。</para>
+                <para></para>
+                <para></para>
+                <sect5 xml:id="android_vs_emb_liunx"><title>Android和嵌入式Linux的区别</title>
+                    <para>典型的Android系统中，根据开发所用语言不同和开发环境不同，可以划分为：</para>
+                    <itemizedlist>
+                        <listitem>上层应用：用java语言在Eclipse+ADT或者Android Studio的IDE中开发Android的app应用程序</listitem>
+                        <listitem>嵌入式底层：用C，C++等语言实现底层的，以Linux为基础的，在Android框架下的，设备的驱动相关的开发，其中更多的是涉及到Linux驱动开发，Java的JNI，Android的驱动框架模型等等内容。</listitem>
+                    </itemizedlist>
+                    <para>此时，对于传统意义上的，嵌入式软件开发，尤其是嵌入式Linux驱动开发，基本上是和，上述的Android开发中的，嵌入式底层开发中的Linux驱动开发，是基本上一样的。</para>
+                    <para>而Android系统中的其他内容，包括嵌入式底层的Java的JNI，Android驱动模型，以及上层应用的Java的Android的app开发，都是和传统的Linux的驱动开发，没什么关系，也是差别很大的，包括所使用的语言，以及所使用的开发环境。</para>
+                    <para></para>
+                    <para>即，Android的开发，基本上都是基于app那层去开发app的，都是用Java语言去写代码的。且底层有Android的运行时作为支持</para>
+                    <para>而Linux的开发，对于Linux驱动开发，都是基于底层的内核去开发的，用的都是C语言，甚至偶尔还会涉及到汇编代码；对于Linux的应用层面的开发，都是Application Framework级别的，应用程序的开发，往往都是去写C语言代码的。</para>
+                    <para>对应的传统Linux嵌入式驱动开发，以及Android中的app开发，以及Android中的驱动移植，所处于不同层次的关系，可以用下图表示：</para>
+                    <figure xml:id="fg.android_vs_linux_dev_within_layer"><title>传统Linux和Android的不同的开发所处层次关系对比图</title>
+                        <mediaobject>
+                            <imageobject role="html"><imagedata fileref="images/android_vs_linux_dev_within_layer.png" align="left"   scalefit="0" width="100%" /></imageobject>
+                            <imageobject role="fo">  <imagedata fileref="images/android_vs_linux_dev_within_layer.png" align="center" scalefit="1" width="100%"/></imageobject>
+                        </mediaobject>
+                    </figure>
+                    <para>而对于Android的中间的Libraris，Android Runtime，以及Application Framework，很多时候，是各种（C，C++，Java等）不同的语言的混合体，包括中间的Android Runtime是利用到了Java的JNI，为Java和C或C++语言之间，提供一个接口，可以互相通讯。</para>
+                    <para>而对于Android这套框架来说：</para>
+                    <itemizedlist>
+                        <listitem>如果是你做Application，即做Android的应用，现在流行称其为app，的话
+                            <para>则是去开发上层的应用-&gt;比如基于Android做一个收音机，做一个音乐播放器等等的应用</para>
+                            <para>-&gt;都是<emphasis>在Android的框架之下</emphasis>（用Android相关的工具，比如Eclipse+ADT） 去<emphasis>写Java代码去实现对应的功能</emphasis></para>
+                        </listitem>
+                        <listitem>如果你是做Android底层嵌入式开发的话
+                            <para>-&gt;那就是在Linux内核框架下，去实现各种功能和模块</para>
+                            <para>-&gt;典型的工作要属，你是一个做硬件的公司，做了块开发板，为了使得其支持Android系统，需要在开发板这个硬件的基础上，去为开发板中的各个硬件模块，比如Nand Flash存储芯片，SD卡芯片，网卡芯片等等，去写对应的模块的驱动</para>
+                            <para>-&gt;<emphasis>此时主要就是在Linux框架下写C（或C++）代码去实现模块驱动</emphasis></para>
+                            <para>-&gt;当然有时候为了支持Android，还需要了解Android本身的框架，可能还需要加上一些JNI的代码支持</para>
+                        </listitem>
+                    </itemizedlist>
+                    <para></para>
+                </sect5>
+            </sect4>
+            
+        </sect3>
+
+        <sect3 xml:id="emb_common_env"><title>嵌入式相对通用的知识：嵌入式开发环境搭建和使用</title>
+            <para>对于嵌入式开发来说，不论你是用何种嵌入式操作系统，都会涉及到，嵌入式环境的搭建和如何使用，如何去搞嵌入式开发。</para>
+            <para></para>
+            <para></para>
+            <para>比如，如果是嵌入式Linux的话，则要去搞懂常见的uboot+kernel+rootfs开发环境</para>
+            
+            <sect4 xml:id="common_env_crosscompiler"><title>嵌入式开发环境：交叉编译器</title>
+                <para></para>
+                <para></para>
+                <para></para>
+                <para>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/cross_compile/release/html/cross_compile.html">交叉编译详解</link></para>
+                <para>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/crosstool_ng/release/html/crosstool_ng.html">crosstool-ng详解</link></para>
+            </sect4>
+            
+            <sect4 xml:id="common_env_burn"><title>嵌入式开发环境：固件的烧写</title>
+                <para>不论是嵌入式Linux，还是WinCE等环境，都会涉及到，将程序交叉编译成可执行文件后，要下载到目标环境中。</para>
+                <para>这个动作，往往被叫做burn，烧录，烧写。</para>
+                <para>比如嵌入式Linux中，有很多种烧写方式：tftp，通过uboot，专门的烧写工具等等</para>
+                <para>如何用tftp下载文件</para>
+                <para>WinCE平台，也有特定的烧写工具</para>
+                <para></para>
+                <para>相关内容：<link xl:href="http://www.crifan.com/files/doc/docbook/firmware_download/release/html/firmware_download.html">【详解】嵌入式开发中固件的烧录方式</link></para>
+            </sect4>
+
+            <sect4 xml:id="common_env_debug"><title>嵌入式开发环境：调试</title>
+                <para>此处的嵌入式环境中的调试，包括不同的调试方法和用不同的调试工具去调试。</para>
+                <sect5 xml:id="env_debug_method_tool"><title>嵌入式开发调试方法和调试工具</title>
+                    <itemizedlist>
+                        <listitem>软件：
+                            <para></para>
+                            <itemizedlist>
+                                <listitem>printf
+                                    <para>嵌入式Linux中经典的printf</para>
+                                    <para></para>
+                                    <para></para>
+                                </listitem>
+                                <listitem>利用NFS实现快速测试
+                                    <para>如何利用NFS实现快速的驱动的开发测试：方便的下载新编译好的驱动.ko文件并insmod去测试</para>
+                                    <para></para>
+                                    <para></para>
+                                </listitem>
+                            </itemizedlist>
+                            <para></para>
+                        </listitem>
+                        <listitem>硬件
+                            <para></para>
+                            <itemizedlist>
+                                <listitem>JTAG
+                                    <para>利用硬件的支持，比如JTAG实现调试</para>
+                                    <para></para>
+                                </listitem>
+                                <listitem>MultiICE
+                                    <para></para>
+                                    <para></para>
+                                </listitem>
+                                <listitem>Jlink
+                                    <para>TODO：把之前折腾过的Jlink的帖子都整理过来</para>
+                                    <para></para>
+                                </listitem>
+                            </itemizedlist>
+                            <para></para>
+                        </listitem>
+                    </itemizedlist>
+                    <para></para>
+                </sect5>
+            </sect4>
+
+            <sect4 xml:id="common_env_ide"><title>嵌入式开发环境：嵌入式IDE</title>
+                <para>详见：<xref linkend="emb_dev_ide" /></para>
+            </sect4>
+
+        </sect3>
+        
+        <para>换句话说，不论你在嵌入式行业内，具体做什么“工种”，以我之前所遇到，见到，听到的为例：</para>
+        <itemizedlist>
+            <listitem>所在公司是做消费类数码产品研发，比如做Linux底层驱动开发</listitem>
+            <listitem>比如工业控制领域内的现场总线开发</listitem>
+            <listitem>汽车电子行业内的嵌入式开发</listitem>
+        </itemizedlist>
+        <para>那么C语言，基本都是必备的，基本功，因此：不论你做相关的哪种领域的嵌入式开发，那么都要努力学好C语言</para>
+        <note xml:id="what_meaning_learn_c_good"><title>学好C语言是什么意思</title>
+            <para>学好C语言的意思是：不单单掌握C语言的语法，更要：</para>
+            <itemizedlist>
+                <listitem>有良好的编程思想</listitem>
+                <listitem>良好的编写高质量代码的编码习惯</listitem>
+                <listitem>良好的处理问题的思路</listitem>
+                <listitem>良好的代码风格</listitem>
+                <listitem>了解写出高质量C语言代码需要注意哪些细节</listitem>
+            </itemizedlist>
+            <para>等等。</para>
+        </note>
+        <para>另外，由于一些嵌入式操作系统，比如嵌入式Linux系统，ucOS/II（以及其他很多常见的嵌入式操作系统，比如VxWorks等）都是相对通用的。</para>
+        <para>所以，为了学好嵌入式，也要尽量找机会去多学习和了解这些系统的特点和使用方法，最好找机会多去实际动手练习。</para>
+        <para></para>
+    </sect2>
+
+    <sect2 xml:id="emb_specific_knowledge"><title>嵌入式领域内某领域内相关特定知识</title>
+        <para>同理：有些是Domain knowledge，即领域相关的知识</para>
+        <para>关于这部分，之前见过的，一个老外写的，不错的嵌入式的教程：</para>
+        <para><xref linkend="emb_sys_arch_comprehensive_guide" /></para>
+        <para>中所给出的例子，就是个很好的，domain knowledge的例子：</para>
+        <para>如果打算从事嵌入式机顶盒方面的嵌入式开发的话，那么往往又要涉及到</para>
+        <para>DVB，MHP，EGB，和其他的协议，架构，软件库，等等等等</para>
+        <para>所以说对于不同的领域，其所相关的东西，光是新名词就一堆一堆的</para>
+        <para>更别说，每个名字后面都对应着一堆规范说明，都N多页N多页</para>
+        <para>往往还都是英文的</para>
+        <para>此时你所面对这些技术（名字和规范说明）的心情</para>
+        <para>有点类似于：你是干木匠的，然后让你去把瓦工干的活，不仅仅要把名词搞懂了，还要搞懂如何实现的，并且还要把活干得好</para>
+        <para>这时候，往往就是：需要你有足够的背景知识：对于该领域所涉及的到的技术，即使没实际经验，也要最好有个概念</para>
+        <para>加上良好的学习能力：有了其他领域的背景知识，以便于稍微帮助你学习新领域的知识</para>
+        <para>以及良好的悟性：很多时候，学习新东西，出了基础和经验，剩下就是悟性了</para>
+        <para>加上：足够的耐心，毅力</para>
+        <para>以及实际动手能力：把所理解的内容，能转化有有效的代码，</para>
+        <para>最终：</para>
+        <para>真正去用高质量的代码，实现软件的功能</para>
+        <para>由此，算是：</para>
+        <para>在建筑领域内混的一个木工，靠着基础知识，努力学习瓦工方面的知识，加上良好的悟性和动手能力，</para>
+        <para>最终把瓦工的活干了，而且干得还不错</para>
+        <para>当然老板最希望你是：干的比原来的瓦工干的还好</para>
+        <para>如此，正所谓：嵌入式开发中</para>
+        <para>最先要，也最重要的，是把基础知识学好了，基础打牢了；</para>
+        <para>然后是，针对所要学习和工作的相关领域的知识，去用最短的时间，最大的学习热情，加上悟性，和学习方法，最终掌握该领域的知识，并且实际动手去锻炼，最终实现目标：</para>
+        <para>用高质量的代码实现嵌入式领域内的相关的软件功能</para>
+        <para></para>
+        <para></para>
+
+		<sect3 xml:id="field_consumer_electric"><title>嵌入式领域相关知识之消费类数码</title>
+			<para>如果做消费类数码方面的嵌入式研发，往往会涉及到嵌入式开发板</para>
+			<para>以某个SoC芯片为核心的开发板，然后上面有各种接口</para>
+			<para>为各种接口去开发不同平台下，比如嵌入式Linux，ucOS/II等等，的驱动，或者上层应用层的软件。</para>
+			<para></para>
+			<para></para>
+		</sect3>
+
+		<sect3 xml:id="field_industrial_automation_control"><title>嵌入式领域相关知识之工业自动化控制</title>
+			<para>其实严格区分的工业自动化控制的话，算是两个方向，工业控制和工业自动化，这两个领域，也是不同，各有侧重点的。</para>
+			<para>但是此处也还是算是工业方面的领域，所以就放在一起说了。</para>
+			<para>可能会涉及的技术：现场总线</para>
+			<para></para>
+		</sect3>
+
+		<sect3 xml:id="field_auto_electronics"><title>嵌入式领域相关知识之汽车电子</title>
+			<para>汽车电子领域内，在协议和接口方面，相对用的最多的是CAN总线协议，也常会涉及到MOST（Media Oriented Systems Transport）总线</para>
+            <para>相对来说其他行业就很少用到这类技术。</para>
+			<para>除了汽车电子领域相关的技术，往往还会涉及到相关的标准，比如SPICE等等。</para>
+			<para></para>
+			<para></para>
+		</sect3>
+		
+		<sect3 xml:id="specific_medical_instrument"><title>嵌入式领域相关知识之医疗器械</title>
+			<para></para>
+			<para></para>
+			<para></para>
+			<para></para>
+		</sect3>
+
+		<sect3 xml:id="specific_aeronautics_astronautics"><title>嵌入式领域相关知识之航空航天</title>
+			<para>这个领域不熟悉。但是了解过一些相关知识。比如美国的好奇号火星探测器，里面用的操作系统就是VxWorks。</para>
+			<para></para>
+			<para></para>
+			<para></para>
+		</sect3>
+    </sect2>
+</sect1>
+
+<sect1 xml:id="emb_how_hw_map_sw"><title>嵌入式系统中从底层硬件到上层软件之间的逻辑层次和映射关系</title>
+    <para>嵌入式教程，关于嵌入式硬件，尤其是嵌入式开发，尤其是上面的CPU： </para>
+    <para>从底层硬件实体，到上层软件层面的抽象，到底是如何映射的 </para>
+    <para>抽空写教程，详细介绍 </para>
+    <para>此处，先简要介绍一下： </para>
+    <orderedlist>
+        <listitem>找个开发板，真正的截图，能清晰的显示，开发板上面的CPU是什么芯片 </listitem>
+        <listitem>找个对应或类似CPU芯片的，物理排版图，BOM图，能否显示出，片内的RAM，CPU核心，外围设备的，那种图</listitem>
+        <listitem>然后说明，CPU部分，片内RAM等部分，对应的逻辑抽象，分别叫做什么</listitem>
+        <listitem>然后再去对照着，对应芯片的datasheet，找到对应的芯片参数表，对应着CPU core，多少Hz，什么核心的
+            <para>比如ARM核的片内RAM，比如128K，等等内容 </para>
+        </listitem>
+        <listitem>最后，其实，CPU内部的架构，再详细剖析一下
+            <para>包括CPU内部是对应的ALU，寄存器，等等</para>
+        </listitem>
+        <listitem>然后再去提到，相关的CPU内部指令执行，分别3部，5步，之类的，比如取指，译指，执行，写回等等
+            <para>包括内部寄存器，分为几种类型，比如arm的shadow寄存器，在某些FIP等特殊情况下，无需保存现场，而直接实现中断时快速跳转等功能</para>
+        </listitem>
+        <listitem>然后ALU的话，内部原理是如何实现的，主要是硬件的门电路gate等实现的</listitem>
+        <listitem>对于门电路，再往下分，最后就是对应的与非门，逻辑与，逻辑或等等门电路了。</listitem>
+        <listitem>而对于门电路，物理硬件的实现，好像也是有多种可能的。 
+            <para>具体需要再去学习<link xl:href="http://www.crifan.com/files/doc/docbook/hardware_basic/release/htmls/">硬件电路基础知识</link>中提到的那个教程：<link xl:href="http://www.play-hookey.com/" />，才能具体解释清楚的。</para>
+        </listitem>
+        <listitem>再往下，好像就是：晶体二极管，三极管了。
+            <para>都是这些晶体管，慢慢的组合，构成不同的逻辑电路的，包括什么D寄存器，K寄存器（好像是）之类的。</para>
+        </listitem>
+        <listitem></listitem>
+    </orderedlist>
+    <para></para>
+    <para></para>
+</sect1>
+
+
+</chapter>

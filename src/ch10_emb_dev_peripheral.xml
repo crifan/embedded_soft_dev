@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding="utf-8"?>
+
+<!DOCTYPE chapter
+[
+<!ENTITY % crl_ent PUBLIC "crl.ent" 'http://www.crifan.com/files/res/docbook/entity/crl.ent'>
+%crl_ent;
+
+]>
+
+<chapter
+    xmlns="http://docbook.org/ns/docbook"
+    xmlns:xl="http://www.w3.org/1999/xlink"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:mathml="http://www.w3.org/1998/Math/MathML"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    
+    xml:id="ch10_emb_dev_peripheral">
+<title>嵌入式软件开发的外围设备</title>
+<abstract></abstract>
+
+<para>TODO：</para>
+<para><link xl:href="http://www.crifan.com/summary_embedded_system_various_peripherals">【整理】嵌入式系统的各种常见外设</link></para>
+
+<sect1 xml:id="peripheral_lcd"><title>嵌入式外设之LCD显示屏</title>
+    <para>一些LCD控制器，可以参考：</para>
+    <para><link xl:href="http://www.directinsight.co.uk/products/segger/emwingsc_driver.html">Segger - emWin - List of supported LCD controllers</link></para>
+    <para></para>
+</sect1>
+
+<sect1 xml:id="peripheral_image_sensor"><title>嵌入式外设之图像传感器</title>
+    <para>图像传感器，Image Sensor，之前所接触到的，都只是放在CPU内部的。</para>
+    <para>后来才看到，还有外部接口接Image Sensor的：</para>
+    <para><link xl:href="http://www.armkits.com/download/at91sam9g45.pdf" />中的：ITU-R BT. 601/656 Image Sensor Interface</para>
+    <para>是专门的接口，用于连接外部图像传感器的。</para>
+    <para></para>
+    <para></para>
+</sect1>
+
+</chapter>
